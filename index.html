@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guillermo Álvarez — Fotografía de retrato</title>
+  <meta name="description" content="Fotografía de retrato en CDMX. Sesiones que capturan quién eres, no cómo posas." />
+
+  <!-- Meta tags para redes sociales (WhatsApp, Facebook, Instagram) -->
+  <meta property="og:title" content="Guillermo Álvarez — Fotografía de retrato" />
+  <meta property="og:description" content="Sesiones de retrato en CDMX que capturan quién eres, no cómo posas. Agenda tu sesión." />
+  <meta property="og:image" content="https://guillermoworks.com/image/hero/camila-6.jpg" />
+  <meta property="og:url" content="https://guillermoworks.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guillermo Álvarez — Fotografía de retrato" />
+  <meta name="twitter:description" content="Sesiones de retrato en CDMX que capturan quién eres, no cómo posas." />
+  <meta name="twitter:image" content="https://guillermoworks.com/image/hero/camila-6.jpg" />
+
+  <link rel="icon" href="image/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-80P47BSQ81"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-80P47BSQ81');
+  </script>
+
+  <style>
+    /* Evita parpadeo de contenido sin traducir mientras carga el JSON */
+    body { opacity: 0; transition: opacity 0.25s ease; }
+    body.i18n-ready { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav__brand" aria-label="Inicio">
+    <img src="image/logo.png" alt="Guillermo Álvarez" class="nav__logo"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+    <span class="nav__brand-fallback" style="display:none">
+      <span class="nav__brand-mark"></span>
+      Guillermo Álvarez
+      <span class="nav__brand-italic" data-i18n="nav.tagline">fotografía</span>
+    </span>
+  </a>
+
+  <ul class="nav__links">
+    <li><a href="#estudio" data-i18n="nav.estudio">Estudio</a></li>
+    <li><a href="#trabajo" data-i18n="nav.trabajo">Trabajo</a></li>
+    <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+    <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+    <li><a href="#colabora" data-i18n="nav.colabora">Colabora</a></li>
+  </ul>
+
+  <div class="nav__actions">
+    <div class="toggle" role="group" aria-label="Idioma" id="langToggle">
+      <button class="active" data-lang="es">ES</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Menú mobile -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#estudio" data-i18n="nav.estudio">Estudio</a>
+  <a href="#trabajo" data-i18n="nav.trabajo">Trabajo</a>
+  <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
+  <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+  <a href="#colabora" data-i18n="nav.colabora">Colabora</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO — Fullscreen con foto de fondo
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="image/hero/camila-6.jpg" alt="Retrato editorial" />
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__index reveal">
+    <span class="hero__index-label" data-i18n="hero.sesionLabel">Sesión No.</span>
+    <div class="hero__index-number">
+      112
+      <span class="divider"></span>
+      <span class="total" data-i18n="hero.yContando">y contando</span>
+    </div>
+  </div>
+
+  <div class="hero__content">
+    <h1 class="hero__title reveal">
+      <span data-i18n="hero.title1">Retratos</span>
+      <span class="hero__title-em" data-i18n="hero.title2">que no se</span>
+      <span data-i18n="hero.title3">olvidan.</span>
+    </h1>
+
+    <div class="hero__meta reveal">
+      <p class="hero__sub" data-i18n="hero.sub">
+        Sesiones de retrato que capturan quién eres — no cómo posas.
+      </p>
+      <div class="hero__location">
+        <span class="hero__location-dot"></span>
+        <span data-i18n="hero.location">Ciudad de México · Disponible</span>
+      </div>
+    </div>
+
+    <div class="hero__actions reveal">
+      <a href="#trabajo" class="hero__cta">
+        <span data-i18n="hero.ctaWork">Ver trabajo</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#contacto" class="hero__cta-ghost" data-i18n="hero.ctaWrite">Escríbeme</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span data-i18n="hero.scroll">Continúa</span>
+    <div class="scroll-hint__line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MARQUEE
+═══════════════════════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item" data-i18n="marquee.retrato">Retrato</span>
+    <span class="marquee__item"><em data-i18n="marquee.personal">Personal</em></span>
+    <span class="marquee__item" data-i18n="marquee.marca">Marca personal</span>
+    <span class="marquee__item"><em data-i18n="marquee.parejas">Parejas</em></span>
+    <span class="marquee__item" data-i18n="marquee.corporativo">Corporativo</span>
+    <span class="marquee__item"><em data-i18n="marquee.colabora">Colaboraciones</em></span>
+    <span class="marquee__item" data-i18n="marquee.retrato">Retrato</span>
+    <span class="marquee__item"><em data-i18n="marquee.personal">Personal</em></span>
+    <span class="marquee__item" data-i18n="marquee.marca">Marca personal</span>
+    <span class="marquee__item"><em data-i18n="marquee.parejas">Parejas</em></span>
+    <span class="marquee__item" data-i18n="marquee.corporativo">Corporativo</span>
+    <span class="marquee__item"><em data-i18n="marquee.colabora">Colaboraciones</em></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MANIFIESTO
+═══════════════════════════════════════════ -->
+<section class="intro">
+  <div class="intro__label reveal">
+    <span class="intro__label-num">01</span>
+    <span class="intro__label-text" data-i18n="manifiesto.label">Manifiesto</span>
+  </div>
+
+  <div class="intro__body reveal">
+    <h2 class="intro__heading">
+      <span data-i18n="manifiesto.heading1">No fotografío gente.</span><br>
+      <em data-i18n="manifiesto.heading2">Fotografío el momento</em>
+      <span data-i18n="manifiesto.heading3">en que dejan de posar.</span>
+    </h2>
+    <p class="intro__text" data-i18n="manifiesto.p1">
+      La mayoría de personas que fotografío <strong>nunca ha posado antes</strong>. Por eso mi trabajo empieza mucho antes de sacar la cámara — en la conversación, en encontrar la manera de que te sueltes y simplemente seas tú.
+    </p>
+    <p class="intro__text" data-i18n="manifiesto.p2">
+      Trabajo con <strong>luz natural y artificial</strong> para construir imágenes limpias, con intención y carácter. Pero la técnica es la parte fácil. Lo importante es lo que la foto termina diciendo de ti.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ESTUDIO — About
+═══════════════════════════════════════════ -->
+<section class="estudio" id="estudio">
+  <div class="estudio__grid">
+
+    <div class="estudio__photo reveal">
+      <img src="image/about/me.jpg" alt="Guillermo Álvarez"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+      <div class="estudio__photo-placeholder" style="display:none">
+        <span data-i18n="estudio.tuFoto">Tu foto</span>
+      </div>
+      <div class="estudio__photo-tag">
+        <span class="estudio__photo-tag-num">02</span>
+        <span class="estudio__photo-tag-text" data-i18n="estudio.label">El estudio</span>
+      </div>
+    </div>
+
+    <div class="estudio__content">
+      <div class="intro__label reveal">
+        <span class="intro__label-num">02</span>
+        <span class="intro__label-text" data-i18n="estudio.label">El estudio</span>
+      </div>
+
+      <h2 class="estudio__heading reveal">
+        <span data-i18n="estudio.heading1">Ingeniero de</span><br>
+        <span data-i18n="estudio.heading2">formación,</span> <em data-i18n="estudio.heading3">fotógrafo</em><br>
+        <span data-i18n="estudio.heading4">por vocación.</span>
+      </h2>
+
+      <div class="estudio__text reveal">
+        <p data-i18n="estudio.p1">
+          Soy Guillermo Álvarez, fotógrafo de retrato basado en Ciudad de México. Mi formación técnica me enseñó a mirar con precisión — hoy uso esa misma mirada para encontrar el gesto exacto que hace que una fotografía se sienta real.
+        </p>
+        <p data-i18n="estudio.p2">
+          Cada sesión es una colaboración, no una producción. Trabajo con luz natural y artificial para construir imágenes con intención, pero el objetivo nunca es solo verse bien — es reconocerte en cada imagen.
+        </p>
+      </div>
+
+      <div class="estudio__stats reveal">
+        <div class="estudio__stat">
+          <span class="estudio__stat-num">CDMX</span>
+          <span class="estudio__stat-label" data-i18n="estudio.stat1">Base & área metro</span>
+        </div>
+        <div class="estudio__stat">
+          <span class="estudio__stat-num">112+</span>
+          <span class="estudio__stat-label" data-i18n="estudio.stat2">Sesiones realizadas</span>
+        </div>
+        <div class="estudio__stat">
+          <span class="estudio__stat-num">2024</span>
+          <span class="estudio__stat-label" data-i18n="estudio.stat3">Iniciando este camino</span>
+        </div>
+      </div>
+
+      <div class="estudio__social reveal">
+        <a href="https://www.instagram.com/clickbymemo/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/memoAlvarez625" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://clickbymemo.pixieset.com/portfolio/" target="_blank" rel="noopener" aria-label="Pixieset">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TRABAJO — Galería
+═══════════════════════════════════════════ -->
+<section class="trabajo" id="trabajo">
+  <div class="trabajo__header">
+    <div class="intro__label reveal">
+      <span class="intro__label-num">03</span>
+      <span class="intro__label-text" data-i18n="nav.trabajo">Trabajo</span>
+    </div>
+    <h2 class="trabajo__heading reveal">
+      <span data-i18n="trabajo.heading1">Una selección</span><br>
+      <em data-i18n="trabajo.heading2">de sesiones</em> <span data-i18n="trabajo.heading3">recientes.</span>
+    </h2>
+  </div>
+
+  <!-- Filtros -->
+  <div class="trabajo__filters reveal">
+    <button class="filter-chip active" data-filter="all" data-i18n="trabajo.filterAll">Todo</button>
+    <button class="filter-chip" data-filter="retrato" data-i18n="trabajo.filterRetrato">Retrato</button>
+    <button class="filter-chip" data-filter="pareja" data-i18n="trabajo.filterPareja">Pareja</button>
+    <button class="filter-chip" data-filter="corporativo" data-i18n="trabajo.filterCorporativo">Corporativo</button>
+    <button class="filter-chip" data-filter="lifestyle" data-i18n="trabajo.filterLifestyle">Lifestyle</button>
+    <button class="filter-chip" data-filter="urbana" data-i18n="trabajo.filterUrbana">Urbana</button>
+  </div>
+
+  <!-- Filas dinámicas -->
+  <div class="trabajo__rows reveal">
+    <div class="trabajo__row" id="trabajoRow1">
+      <div class="trabajo__row-track" id="trabajoTrack1"></div>
+    </div>
+    <div class="trabajo__row" id="trabajoRow2">
+      <div class="trabajo__row-track" id="trabajoTrack2"></div>
+    </div>
+  </div>
+
+  <div class="trabajo__more reveal">
+    <a href="https://clickbymemo.pixieset.com/portfolio/" target="_blank" class="btn-outline">
+      <span data-i18n="trabajo.verGaleria">Ver galería completa en Pixieset</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 2.5h-6M9.5 2.5v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICIOS
+═══════════════════════════════════════════ -->
+<section class="servicios" id="servicios">
+  <div class="servicios__header">
+    <div class="intro__label reveal">
+      <span class="intro__label-num">04</span>
+      <span class="intro__label-text" data-i18n="nav.servicios">Servicios</span>
+    </div>
+    <h2 class="servicios__heading reveal">
+      <span data-i18n="servicios.heading1">Cada sesión empieza</span><br>
+      <span data-i18n="servicios.heading2">igual:</span> <em data-i18n="servicios.heading3">con una idea</em> <span data-i18n="servicios.heading4">que</span><br>
+      <span data-i18n="servicios.heading5">merece verse bien.</span>
+    </h2>
+    <p class="servicios__sub reveal" data-i18n="servicios.sub">
+      Desde tu primer retrato profesional hasta la sesión que marca un antes y un después — cada proyecto se trabaja con la misma atención al detalle, sin importar el tamaño.
+    </p>
+  </div>
+
+  <div class="servicios__grid">
+
+    <div class="plan reveal">
+      <div class="plan__top">
+        <span class="plan__num">01</span>
+        <span class="plan__badge" data-i18n="servicios.badge1">Más solicitado</span>
+      </div>
+      <h3 class="plan__name" data-i18n="servicios.plan1Name">Retrato</h3>
+      <p class="plan__desc" data-i18n="servicios.plan1Desc">Individual o en pareja. Estudio o luz natural. Para redes, perfil profesional o simplemente para ti.</p>
+      <div class="plan__price">
+        <span class="plan__price-from" data-i18n="servicios.desde">Desde</span>
+        <span class="plan__price-num">$800</span>
+        <span class="plan__price-cur">MXN</span>
+      </div>
+      <ul class="plan__list">
+        <li data-i18n="servicios.plan1Item1">Sesión guiada en estudio</li>
+        <li data-i18n="servicios.plan1Item2">Fotografías editadas en alta resolución</li>
+        <li data-i18n="servicios.plan1Item3">Entrega vía Pixieset</li>
+      </ul>
+      <a href="#contacto" class="plan__cta" data-i18n="servicios.agendar">Agendar sesión</a>
+    </div>
+
+    <div class="plan plan--featured reveal">
+      <div class="plan__top">
+        <span class="plan__num">02</span>
+        <span class="plan__badge plan__badge--gold" data-i18n="servicios.badge2">Marca personal</span>
+      </div>
+      <h3 class="plan__name" data-i18n="servicios.plan2Name">Lifestyle</h3>
+      <p class="plan__desc" data-i18n="servicios.plan2Desc">Contenido para tu marca, tu emprendimiento o esa presencia digital que quieres construir en serio.</p>
+      <div class="plan__price">
+        <span class="plan__price-from" data-i18n="servicios.desde">Desde</span>
+        <span class="plan__price-num">$1,000</span>
+        <span class="plan__price-cur">MXN</span>
+      </div>
+      <ul class="plan__list">
+        <li data-i18n="servicios.plan2Item1">Dirección creativa incluida</li>
+        <li data-i18n="servicios.plan2Item2">Múltiples locaciones o escenas</li>
+        <li data-i18n="servicios.plan2Item3">Set completo para tus redes</li>
+      </ul>
+      <a href="#contacto" class="plan__cta plan__cta--gold" data-i18n="servicios.agendar">Agendar sesión</a>
+    </div>
+
+    <div class="plan reveal">
+      <div class="plan__top">
+        <span class="plan__num">03</span>
+        <span class="plan__badge" data-i18n="servicios.badge3">Para tu carrera</span>
+      </div>
+      <h3 class="plan__name" data-i18n="servicios.plan3Name">Corporativo</h3>
+      <p class="plan__desc" data-i18n="servicios.plan3Desc">LinkedIn, CV, presencia ejecutiva. La primera impresión que da tu imagen profesional.</p>
+      <div class="plan__price">
+        <span class="plan__price-from" data-i18n="servicios.desde">Desde</span>
+        <span class="plan__price-num">$900</span>
+        <span class="plan__price-cur">MXN</span>
+      </div>
+      <ul class="plan__list">
+        <li data-i18n="servicios.plan3Item1">Fondo neutro o de marca</li>
+        <li data-i18n="servicios.plan3Item2">Retoque profesional</li>
+        <li data-i18n="servicios.plan3Item3">Entrega en 3–5 días hábiles</li>
+      </ul>
+      <a href="#contacto" class="plan__cta" data-i18n="servicios.agendar">Agendar sesión</a>
+    </div>
+
+  </div>
+
+  <p class="servicios__note reveal">
+    <span data-i18n="servicios.notePre">¿Tu proyecto no encaja en ninguna categoría?</span>
+    <a href="#contacto" data-i18n="servicios.noteLink">Escríbeme</a>
+    <span data-i18n="servicios.notePost">y lo armamos juntos — cada precio es un punto de partida, no un límite.</span>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROCESO
+═══════════════════════════════════════════ -->
+<section class="proceso" id="proceso">
+  <div class="proceso__intro">
+    <div class="intro__label reveal">
+      <span class="intro__label-num">05</span>
+      <span class="intro__label-text" data-i18n="proceso.label">El proceso</span>
+    </div>
+    <h2 class="proceso__heading reveal">
+      <span data-i18n="proceso.heading1">¿Nunca has posado?</span><br>
+      <em data-i18n="proceso.heading2">Perfecto</em> <span data-i18n="proceso.heading3">— casi nadie sabe.</span>
+    </h2>
+    <p class="proceso__sub reveal" data-i18n="proceso.sub">
+      No necesitas experiencia frente a cámara. Necesitas dirección. Yo me encargo del resto.
+    </p>
+  </div>
+
+  <div class="proceso__steps">
+
+    <div class="step reveal">
+      <span class="step__num">01</span>
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3 class="step__title" data-i18n="proceso.step1Title">Platícame tu idea</h3>
+      <p class="step__desc" data-i18n="proceso.step1Desc">Por WhatsApp o el formulario. Sin compromiso, sin tecnicismos — solo cuéntame qué tienes en mente.</p>
+    </div>
+
+    <div class="step reveal">
+      <span class="step__num">02</span>
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h3 class="step__title" data-i18n="proceso.step2Title">Preparamos juntos</h3>
+      <p class="step__desc" data-i18n="proceso.step2Desc">Un cuestionario breve me dice qué te inspira, qué te incomoda y qué buscas lograr. Llego a la sesión ya sabiendo cómo dirigirte.</p>
+    </div>
+
+    <div class="step reveal">
+      <span class="step__num">03</span>
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      </div>
+      <h3 class="step__title" data-i18n="proceso.step3Title">La sesión</h3>
+      <p class="step__desc" data-i18n="proceso.step3Desc">Te doy indicaciones claras, pose por pose. No tienes que saber qué hacer con las manos — para eso estoy yo.</p>
+    </div>
+
+    <div class="step reveal">
+      <span class="step__num">04</span>
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      </div>
+      <h3 class="step__title" data-i18n="proceso.step4Title">Recibes tus fotos</h3>
+      <p class="step__desc" data-i18n="proceso.step4Desc">En 3 a 7 días según el paquete, vía Pixieset. Fotos editadas, listas para presumir.</p>
+    </div>
+
+  </div>
+
+  <div class="proceso__payment reveal">
+    <div class="proceso__payment-item">
+      <span class="proceso__payment-num">50%</span>
+      <span class="proceso__payment-label" data-i18n="proceso.pay1">Anticipo al agendar tu fecha</span>
+    </div>
+    <div class="proceso__payment-divider"></div>
+    <div class="proceso__payment-item">
+      <span class="proceso__payment-num">50%</span>
+      <span class="proceso__payment-label" data-i18n="proceso.pay2">Restante al momento de entrega</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIOS
+═══════════════════════════════════════════ -->
+<section class="testimonios" id="testimonios">
+  <div class="intro__label reveal testimonios__label">
+    <span class="intro__label-num">06</span>
+    <span class="intro__label-text" data-i18n="testimonios.label">Testimonios</span>
+  </div>
+
+  <div class="testimonios__carousel reveal">
+    <div class="testimonios__track" id="testTrack">
+
+      <div class="testimonio">
+        <div class="testimonio__stars">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q1">"Memo supo capturar exactamente lo que quería. Las fotos quedaron naturales y muy profesionales — sin duda lo recomiendo."</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials">CM</span>
+          <div>
+            <span class="testimonio__name">Camila M.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s1">Sesión de retrato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="testimonio__stars">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q2">"Necesitaba fotos para mi LinkedIn y quedé muy contento con el resultado. Profesional, puntual y con muy buen ojo."</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials">AR</span>
+          <div>
+            <span class="testimonio__name">Andrés R.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s2">Fotografía corporativa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="testimonio__stars">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q3">"Las fotos de nuestra sesión de pareja quedaron hermosas. Nos hizo sentir muy cómodos durante toda la sesión — ¡volveremos!"</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials">LP</span>
+          <div>
+            <span class="testimonio__name">Laura & Pablo</span>
+            <span class="testimonio__service" data-i18n="testimonios.s3">Sesión de pareja</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio">
+        <div class="testimonio__stars">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q4">"Muy creativo con la iluminación. Las fotos para mi marca personal superaron mis expectativas. 100% recomendado."</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials">SV</span>
+          <div>
+            <span class="testimonio__name">Sofía V.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s4">Marca personal</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="test-nav test-nav--prev" id="testPrev" aria-label="Anterior">‹</button>
+    <button class="test-nav test-nav--next" id="testNext" aria-label="Siguiente">›</button>
+    <div class="test-dots" id="testDots"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACTO
+═══════════════════════════════════════════ -->
+<section class="contacto" id="contacto">
+  <div class="contacto__grid">
+
+    <div class="contacto__side reveal">
+      <div class="intro__label">
+        <span class="intro__label-num">07</span>
+        <span class="intro__label-text" data-i18n="nav.contacto">Contacto</span>
+      </div>
+      <h2 class="contacto__heading">
+        <span data-i18n="contacto.heading1">Hablemos de</span><br>
+        <em data-i18n="contacto.heading2">tu sesión.</em>
+      </h2>
+      <p class="contacto__sub" data-i18n="contacto.sub">
+        Cuéntame qué tienes en mente. Respondo personalmente en menos de 24 horas — sin bots, sin plantillas.
+      </p>
+
+      <div class="contacto__links">
+        <a href="mailto:guillermo.alvarez.photos@gmail.com" class="contacto__link">
+          <span class="contacto__link-label" data-i18n="contacto.correo">Correo</span>
+          <span class="contacto__link-value">guillermo.alvarez.photos@gmail.com</span>
+        </a>
+        <a href="https://wa.me/5215662999954" target="_blank" class="contacto__link">
+          <span class="contacto__link-label">WhatsApp</span>
+          <span class="contacto__link-value" data-i18n="contacto.escribeme">Escríbeme directo ↗</span>
+        </a>
+        <a href="https://www.instagram.com/clickbymemo/" target="_blank" class="contacto__link">
+          <span class="contacto__link-label">Instagram</span>
+          <span class="contacto__link-value">@clickbymemo ↗</span>
+        </a>
+      </div>
+
+      <div class="contacto__location">
+        <span class="hero__location-dot"></span>
+        <span data-i18n="contacto.ubicacion">Ciudad de México · Tultepec, Edomex</span>
+      </div>
+    </div>
+
+    <form class="contacto__form reveal" id="contactForm" novalidate>
+      <div class="form-row-2">
+        <div class="field-group">
+          <label for="ctNombre"><span data-i18n="form.nombre">Nombre</span> <span class="req">*</span></label>
+          <input type="text" id="ctNombre" name="nombre" data-i18n-placeholder="form.nombrePlaceholder" placeholder="Tu nombre" required>
+        </div>
+        <div class="field-group">
+          <label for="ctEmail"><span data-i18n="form.email">Email</span> <span class="req">*</span></label>
+          <input type="email" id="ctEmail" name="email" placeholder="tu@correo.com" required>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="ctTelefono" data-i18n="form.telefono">Teléfono / WhatsApp</label>
+        <input type="tel" id="ctTelefono" name="telefono" placeholder="55 XXXX XXXX">
+      </div>
+
+      <div class="field-group">
+        <label for="ctServicio" data-i18n="form.servicioInteres">Servicio de interés</label>
+        <select id="ctServicio" name="servicio">
+          <option value="" data-i18n="form.seleccionaServicio">Selecciona un servicio</option>
+          <option value="retrato" data-i18n="form.tipoRetrato">Retrato</option>
+          <option value="lifestyle" data-i18n="form.tipoLifestyle">Lifestyle / Marca personal</option>
+          <option value="corporativo" data-i18n="form.tipoCorporativo">Corporativo</option>
+          <option value="pareja" data-i18n="form.tipoPareja">Pareja</option>
+          <option value="otro" data-i18n="form.otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="ctMensaje"><span data-i18n="form.mensaje">Mensaje</span> <span class="req">*</span></label>
+        <textarea id="ctMensaje" name="mensaje" rows="4" data-i18n-placeholder="form.mensajePlaceholder" placeholder="Cuéntame de tu proyecto..." required></textarea>
+      </div>
+
+      <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+      <button type="submit" class="colabora__submit" id="ctSubmitBtn">
+        <span class="btn-text" data-i18n="form.enviarMensaje">Enviar mensaje</span>
+        <span class="btn-loading" hidden data-i18n="form.enviando">Enviando…</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p id="ctFormMsg" class="form-msg" hidden></p>
+    </form>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     COLABORA
+═══════════════════════════════════════════ -->
+<section class="colabora" id="colabora">
+  <div class="colabora__bg-word" aria-hidden="true" data-i18n="colabora.bgWord">COLABORA</div>
+
+  <div class="colabora__header">
+    <div class="intro__label reveal">
+      <span class="intro__label-num">08</span>
+      <span class="intro__label-text" data-i18n="colabora.label">Colaboraciones</span>
+    </div>
+    <h2 class="colabora__heading reveal">
+      <span data-i18n="colabora.heading1">No siempre busco</span><br>
+      <span data-i18n="colabora.heading2">clientes.</span> <em data-i18n="colabora.heading3">A veces busco</em><br>
+      <span data-i18n="colabora.heading4">cómplices creativos.</span>
+    </h2>
+    <p class="colabora__sub reveal" data-i18n="colabora.sub">
+      De vez en cuando abro espacio para proyectos sin costo — no como promoción gratuita, sino como una selección de colaboraciones que me interesa construir. Modelos, maquillistas, estilistas, diseñadores, marcas y creadores de contenido: si tienes una idea, quiero escucharla.
+    </p>
+  </div>
+
+  <div class="colabora__grid">
+
+    <div class="colabora__side reveal">
+      <div class="colabora__block">
+        <span class="colabora__block-label" data-i18n="colabora.busco">Qué busco</span>
+        <ul class="colabora__block-list">
+          <li data-i18n="colabora.buscoItem1">Una idea clara, aunque sea pequeña</li>
+          <li data-i18n="colabora.buscoItem2">Compromiso real con la fecha acordada</li>
+          <li data-i18n="colabora.buscoItem3">Ganas de crear algo distinto a lo comercial</li>
+        </ul>
+      </div>
+
+      <div class="colabora__block">
+        <span class="colabora__block-label" data-i18n="colabora.obtienes">Qué obtienes</span>
+        <ul class="colabora__block-list">
+          <li data-i18n="colabora.obtienesItem1">Sesión completa sin costo</li>
+          <li data-i18n="colabora.obtienesItem2">Fotografías en alta resolución para tu portafolio</li>
+          <li data-i18n="colabora.obtienesItem3">Crédito y etiqueta en la publicación</li>
+        </ul>
+      </div>
+
+      <div class="colabora__block">
+        <span class="colabora__block-label" data-i18n="colabora.comoFunciona">Cómo funciona</span>
+        <div class="colabora__mini-steps">
+          <div class="colabora__mini-step">
+            <span>01</span>
+            <p data-i18n="colabora.mini1">Envías tu postulación</p>
+          </div>
+          <div class="colabora__mini-step">
+            <span>02</span>
+            <p data-i18n="colabora.mini2">Reviso y respondo en 5–7 días</p>
+          </div>
+          <div class="colabora__mini-step">
+            <span>03</span>
+            <p data-i18n="colabora.mini3">Si hay match, coordinamos todo</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="colabora__disclaimer" data-i18n="colabora.disclaimer">
+        No todas las postulaciones son aceptadas — selecciono pocos proyectos por temporada para poder darles la atención que merecen.
+      </p>
+    </div>
+
+    <form class="colabora__form reveal" id="colaboraForm" novalidate>
+      <div class="form-row-2">
+        <div class="field-group">
+          <label for="colNombre"><span data-i18n="form.nombre">Nombre</span> <span class="req">*</span></label>
+          <input type="text" id="colNombre" name="nombre" data-i18n-placeholder="form.nombrePlaceholder" placeholder="Tu nombre" required>
+        </div>
+        <div class="field-group">
+          <label for="colCiudad" data-i18n="form.ciudad">Ciudad</label>
+          <input type="text" id="colCiudad" name="ciudad" data-i18n-placeholder="form.ciudadPlaceholder" placeholder="CDMX, Edomex...">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="colInstagram"><span data-i18n="form.instagram">Instagram o portafolio</span> <span class="req">*</span></label>
+        <input type="text" id="colInstagram" name="instagram" data-i18n-placeholder="form.instagramPlaceholder" placeholder="@tuusuario o link a tu portafolio" required>
+      </div>
+
+      <div class="field-group">
+        <label for="colTipo"><span data-i18n="form.tipoProyecto">Tipo de proyecto</span> <span class="req">*</span></label>
+        <select id="colTipo" name="tipo" required>
+          <option value="" data-i18n="form.selecciona">Selecciona una opción</option>
+          <option value="modelo" data-i18n="form.tipoModelo">Modelo</option>
+          <option value="maquillista" data-i18n="form.tipoMaquillista">Maquillista / MUA</option>
+          <option value="estilista" data-i18n="form.tipoEstilista">Estilista / Diseñador</option>
+          <option value="marca_ropa" data-i18n="form.tipoMarcaRopa">Marca de ropa</option>
+          <option value="marca_producto" data-i18n="form.tipoMarcaProducto">Marca de producto</option>
+          <option value="creador" data-i18n="form.tipoCreador">Creador de contenido</option>
+          <option value="artista" data-i18n="form.tipoArtista">Artista / Músico</option>
+          <option value="otro" data-i18n="form.otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="colIdea"><span data-i18n="form.ideaColab">Tu idea de colaboración</span> <span class="req">*</span></label>
+        <textarea id="colIdea" name="idea" rows="4" data-i18n-placeholder="form.ideaPlaceholder" placeholder="Cuéntame qué tienes en mente, qué referencias te inspiran o qué te gustaría lograr..." required></textarea>
+      </div>
+
+      <div class="form-row-2">
+        <div class="field-group">
+          <label for="colDisponibilidad" data-i18n="form.disponibilidad">Disponibilidad</label>
+          <input type="text" id="colDisponibilidad" name="disponibilidad" data-i18n-placeholder="form.disponibilidadPlaceholder" placeholder="Ej: fines de semana, después de julio...">
+        </div>
+        <div class="field-group">
+          <label for="colPorque" data-i18n="form.porque">¿Por qué te gustaría colaborar?</label>
+          <input type="text" id="colPorque" name="porque" data-i18n-placeholder="form.porquePlaceholder" placeholder="Una línea es suficiente">
+        </div>
+      </div>
+
+      <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+      <button type="submit" class="colabora__submit" id="colSubmitBtn">
+        <span class="btn-text" data-i18n="form.enviarPostulacion">Enviar postulación</span>
+        <span class="btn-loading" hidden data-i18n="form.enviando">Enviando…</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p id="colFormMsg" class="form-msg" hidden></p>
+    </form>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__grid">
+    <a href="/" class="footer__brand">
+      <img src="image/logo.png" alt="Guillermo Álvarez" class="footer__logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+      <span class="footer__brand-fallback" style="display:none">Guillermo Álvarez</span>
+    </a>
+
+    <nav class="footer__nav">
+      <a href="#estudio" data-i18n="nav.estudio">Estudio</a>
+      <a href="#trabajo" data-i18n="nav.trabajo">Trabajo</a>
+      <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
+      <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+      <a href="#colabora" data-i18n="nav.colabora">Colabora</a>
+    </nav>
+
+    <div class="footer__social">
+      <a href="https://www.instagram.com/clickbymemo/" target="_blank" aria-label="Instagram">IG</a>
+      <a href="https://www.facebook.com/memoAlvarez625" target="_blank" aria-label="Facebook">FB</a>
+      <a href="https://wa.me/5215662999954" target="_blank" aria-label="WhatsApp">WA</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> <span data-i18n="footer.marca">Guillermo Álvarez Fotografía</span></span>
+    <span data-i18n="footer.ciudad">Ciudad de México</span>
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/5215662999954" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.428a.75.75 0 0 0 .916.916l5.566-1.475A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.662-.523-5.17-1.432l-.36-.216-3.862 1.023 1.023-3.747-.236-.374A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- ═══════════════════════════════════════════
+     LIGHTBOX
+═══════════════════════════════════════════ -->
+<div id="lightbox" aria-modal="true" role="dialog" aria-label="Imagen ampliada">
+  <button id="lbClose" aria-label="Cerrar">✕</button>
+  <button id="lbPrev" aria-label="Anterior">‹</button>
+  <button id="lbNext" aria-label="Siguiente">›</button>
+  <div id="lbImgWrap"><img id="lbImg" src="" alt="Foto ampliada" /></div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

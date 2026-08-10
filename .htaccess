@@ -1,0 +1,5 @@
+# Proteger solo lo crítico
+<FilesMatch "^\.env$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
