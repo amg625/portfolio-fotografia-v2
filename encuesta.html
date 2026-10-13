@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuéntame cómo fue tu sesión — Click by Memo</title>
+<meta name="description" content="Una reseña opcional y anónima si tú quieres. Toma dos minutos y ayuda a que más personas se animen a tener su sesión.">
+<meta name="robots" content="noindex">
+
+<!-- Favicon (reutiliza el de tu sitio) -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- Tipografías OBSCURA -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/encuesta.css">
+</head>
+<body class="theme-dark" id="top">
+
+  <!-- ░░ Header mínimo ░░ -->
+  <header class="mini-nav">
+    <a href="index.html" class="mini-nav__brand" aria-label="Volver al inicio — Click by Memo">
+      Click <span>by</span> Memo
+    </a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar a modo claro">
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+    </button>
+  </header>
+
+  <main class="survey-wrap">
+    <div class="survey-card" data-state="form">
+
+      <!-- ░░ Encabezado ░░ -->
+      <p class="survey-eyebrow">Encuesta opcional · toma 2 minutos</p>
+      <h1 class="survey-title">¿Cómo estuvo<br>tu sesión?</h1>
+      <p class="survey-sub">
+        Tu opinión no es obligatoria, pero ayuda muchísimo a que más personas se animen a tener
+        la suya. Si prefieres no decir quién eres, también está perfecto — puedes dejarlo anónimo.
+      </p>
+
+      <!-- ░░ Formulario ░░ -->
+      <form id="resenaForm" novalidate>
+
+        <!-- Honeypot anti-bots -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">No llenar este campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Calificación -->
+        <fieldset class="field-group stars-group">
+          <legend class="field-label">¿Qué tan a gusto te sentiste? <span class="req">*</span></legend>
+          <div class="star-rating" id="starRating">
+            <input type="radio" name="estrellas" id="star5" value="5"><label for="star5" title="Excelente">★</label>
+            <input type="radio" name="estrellas" id="star4" value="4"><label for="star4" title="Muy bien">★</label>
+            <input type="radio" name="estrellas" id="star3" value="3"><label for="star3" title="Bien">★</label>
+            <input type="radio" name="estrellas" id="star2" value="2"><label for="star2" title="Regular">★</label>
+            <input type="radio" name="estrellas" id="star1" value="1"><label for="star1" title="No tan bien">★</label>
+          </div>
+          <p class="star-feedback" id="starFeedback" aria-live="polite">&nbsp;</p>
+        </fieldset>
+
+        <!-- Nombre -->
+        <div class="field-group">
+          <label for="nombre" class="field-label">Tu nombre <span class="req">*</span></label>
+          <input type="text" id="nombre" name="nombre" class="field-input" placeholder="Ej. Camila M." maxlength="150" required>
+          <p class="field-hint">¿Prefieres no decir quién eres? Escribe "Anónimo" o solo tus iniciales — es completamente válido.</p>
+        </div>
+
+        <!-- Servicio -->
+        <div class="field-group">
+          <label for="servicio" class="field-label">Tipo de sesión <span class="field-optional">(opcional)</span></label>
+          <div class="select-wrap">
+            <select id="servicio" name="servicio" class="field-input">
+              <option value="">Prefiero no especificar</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="retrato">Retrato</option>
+              <option value="corporativo">Corporativo</option>
+              <option value="pareja">Pareja</option>
+              <option value="producto">Producto</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Comentario -->
+        <div class="field-group">
+          <label for="comentario" class="field-label">Cuéntame un poco más <span class="req">*</span></label>
+          <textarea id="comentario" name="comentario" class="field-input" rows="4" maxlength="800" placeholder="¿Qué fue lo que más te gustó? ¿Cómo te hice sentir durante la sesión?" required></textarea>
+        </div>
+
+        <!-- Autorización -->
+        <label class="checkbox-row" for="autoriza">
+          <input type="checkbox" id="autoriza" name="autoriza">
+          <span class="checkbox-box" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="11" height="11"><path d="M2 8.5l3.5 3.5L14 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="checkbox-text">Autorizo que este comentario se muestre en guillermoworks.com — nunca se publican datos de contacto.</span>
+        </label>
+
+        <p class="form-error" id="formError" role="alert"></p>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="btn-label">Enviar mi opinión</span>
+          <span class="btn-loading" hidden>
+            <svg viewBox="0 0 24 24" width="16" height="16" class="spin"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="40" stroke-linecap="round"/></svg>
+            Enviando…
+          </span>
+        </button>
+
+        <p class="skip-link"><a href="index.html">Prefiero no responder, llévame al inicio →</a></p>
+      </form>
+
+      <!-- ░░ Estado de éxito ░░ -->
+      <div class="success-state">
+        <div class="success-icon">
+          <svg viewBox="0 0 52 52" width="52" height="52">
+            <circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="1.5" class="success-circle"/>
+            <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M15 27l7 7 15-15" class="success-check"/>
+          </svg>
+        </div>
+        <h2 class="success-title">Gracias por tu tiempo</h2>
+        <p class="success-sub">Tu opinión quedó registrada. Significa mucho, de verdad.</p>
+        <a href="index.html" class="success-link">Volver al inicio →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="mini-footer">
+    <p>Click by Memo — Fotografía de retrato</p>
+  </footer>
+
+  <script src="js/encuesta.js"></script>
+</body>
+</html>
