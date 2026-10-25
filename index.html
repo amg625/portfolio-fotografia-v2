@@ -324,75 +324,188 @@
     </p>
   </div>
 
-  <div class="servicios__grid">
+  <!-- ── I · Tipo de sesión: índice editorial + foto ── -->
+  <p class="servicios__block-label reveal">
+    <span class="servicios__block-num">I</span>
+    <span data-i18n="servicios.labelTipo">Tipo de sesión</span>
+  </p>
 
-    <div class="plan reveal">
-      <div class="plan__top">
-        <span class="plan__num">01</span>
-        <span class="plan__badge" data-i18n="servicios.badge1">Más solicitado</span>
-      </div>
-      <h3 class="plan__name" data-i18n="servicios.plan1Name">Retrato</h3>
-      <p class="plan__desc" data-i18n="servicios.plan1Desc">Individual o en pareja. Estudio o luz natural. Para redes, perfil profesional o simplemente para ti.</p>
-      <div class="plan__price">
-        <span class="plan__price-from" data-i18n="servicios.desde">Desde</span>
-        <span class="plan__price-num">$800</span>
-        <span class="plan__price-cur">MXN</span>
-      </div>
-      <ul class="plan__list">
-        <li data-i18n="servicios.plan1Item1">Sesión guiada en estudio</li>
-        <li data-i18n="servicios.plan1Item2">Fotografías editadas en alta resolución</li>
-        <li data-i18n="servicios.plan1Item3">Entrega vía Pixieset</li>
-      </ul>
-      <a href="#contacto" class="plan__cta" data-i18n="servicios.agendar">Agendar sesión</a>
+  <div class="svc" id="svc">
+    <div class="svc__list-wrap">
+      <article class="svc__item reveal" data-index="0">
+        <h3 class="svc__head">
+          <button type="button" class="svc__trigger" id="svc-t1" aria-expanded="false" aria-controls="svc-p1">
+            <span class="svc__num">01</span>
+            <span class="svc__name" data-i18n="servicios.plan1Name">Retrato</span>
+            <span class="svc__plus" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="svc__body" id="svc-p1" role="region" aria-labelledby="svc-t1">
+          <div class="svc__inner">
+            <img class="svc__thumb" src="image/portafolio/retrato/retrato45.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="svc__badge" data-i18n="servicios.badge1">Más solicitado</span>
+            <p class="svc__desc" data-i18n="servicios.plan1Desc">Individual o en pareja. Estudio o luz natural. Para redes, perfil profesional o simplemente para ti.</p>
+            <ul class="svc__list">
+            <li data-i18n="servicios.plan1Item1">Sesión guiada en estudio</li>
+            <li data-i18n="servicios.plan1Item2">Fotografías editadas en alta resolución</li>
+            <li data-i18n="servicios.plan1Item3">Entrega vía Pixieset</li>
+            </ul>
+            <a href="#contacto" class="svc__cta" data-servicio="retrato"><span data-i18n="servicios.cotizar">Cotizar mi sesión</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="svc__item reveal" data-index="1">
+        <h3 class="svc__head">
+          <button type="button" class="svc__trigger" id="svc-t2" aria-expanded="false" aria-controls="svc-p2">
+            <span class="svc__num">02</span>
+            <span class="svc__name" data-i18n="servicios.plan2Name">Lifestyle</span>
+            <span class="svc__plus" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="svc__body" id="svc-p2" role="region" aria-labelledby="svc-t2">
+          <div class="svc__inner">
+            <img class="svc__thumb" src="image/portafolio/lifestyle/lifestyle4.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="svc__badge" data-i18n="servicios.badge2">Marca personal</span>
+            <p class="svc__desc" data-i18n="servicios.plan2Desc">Contenido para tu marca, tu emprendimiento o esa presencia digital que quieres construir en serio.</p>
+            <ul class="svc__list">
+            <li data-i18n="servicios.plan2Item1">Dirección creativa incluida</li>
+            <li data-i18n="servicios.plan2Item2">Múltiples locaciones o escenas</li>
+            <li data-i18n="servicios.plan2Item3">Set completo para tus redes</li>
+            </ul>
+            <a href="#contacto" class="svc__cta" data-servicio="lifestyle"><span data-i18n="servicios.cotizar">Cotizar mi sesión</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="svc__item reveal" data-index="2">
+        <h3 class="svc__head">
+          <button type="button" class="svc__trigger" id="svc-t3" aria-expanded="false" aria-controls="svc-p3">
+            <span class="svc__num">03</span>
+            <span class="svc__name" data-i18n="servicios.plan3Name">Corporativo</span>
+            <span class="svc__plus" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="svc__body" id="svc-p3" role="region" aria-labelledby="svc-t3">
+          <div class="svc__inner">
+            <img class="svc__thumb" src="image/portafolio/corporativo/corpo3.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="svc__badge" data-i18n="servicios.badge3">Para tu carrera</span>
+            <p class="svc__desc" data-i18n="servicios.plan3Desc">LinkedIn, CV, presencia ejecutiva. La primera impresión que da tu imagen profesional.</p>
+            <ul class="svc__list">
+            <li data-i18n="servicios.plan3Item1">Fondo neutro o de marca</li>
+            <li data-i18n="servicios.plan3Item2">Retoque profesional</li>
+            <li data-i18n="servicios.plan3Item3">Entrega en 3–5 días hábiles</li>
+            </ul>
+            <a href="#contacto" class="svc__cta" data-servicio="corporativo"><span data-i18n="servicios.cotizar">Cotizar mi sesión</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="svc__item reveal" data-index="3">
+        <h3 class="svc__head">
+          <button type="button" class="svc__trigger" id="svc-t4" aria-expanded="false" aria-controls="svc-p4">
+            <span class="svc__num">04</span>
+            <span class="svc__name" data-i18n="servicios.plan4Name">Pareja</span>
+            <span class="svc__plus" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="svc__body" id="svc-p4" role="region" aria-labelledby="svc-t4">
+          <div class="svc__inner">
+            <img class="svc__thumb" src="image/portafolio/pareja/pareja7.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="svc__badge" data-i18n="servicios.badge4">Para dos</span>
+            <p class="svc__desc" data-i18n="servicios.plan4Desc">Aniversarios, compromisos o simplemente un recuerdo de ustedes dos, sin poses forzadas.</p>
+            <ul class="svc__list">
+            <li data-i18n="servicios.plan4Item1">Dirección guiada, pose por pose</li>
+            <li data-i18n="servicios.plan4Item2">Estudio o exterior, como prefieran</li>
+            <li data-i18n="servicios.plan4Item3">Entrega vía Pixieset</li>
+            </ul>
+            <a href="#contacto" class="svc__cta" data-servicio="pareja"><span data-i18n="servicios.cotizar">Cotizar mi sesión</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="svc__item reveal" data-index="4">
+        <h3 class="svc__head">
+          <button type="button" class="svc__trigger" id="svc-t5" aria-expanded="false" aria-controls="svc-p5">
+            <span class="svc__num">05</span>
+            <span class="svc__name" data-i18n="servicios.plan5Name">Sesiones de temporada</span>
+            <span class="svc__plus" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="svc__body" id="svc-p5" role="region" aria-labelledby="svc-t5">
+          <div class="svc__inner">
+            <img class="svc__thumb" src="image/portafolio/retrato/retrato43.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="svc__badge" data-i18n="servicios.badge5">Cupo limitado</span>
+            <p class="svc__desc" data-i18n="servicios.plan5Desc">Navidad, cumpleaños y fechas especiales. Una sesión de retrato con temática — no una cobertura de fiesta.</p>
+            <ul class="svc__list">
+            <li data-i18n="servicios.plan5Item1">Ambientación y dirección incluidas</li>
+            <li data-i18n="servicios.plan5Item2">Fotografías editadas en alta resolución</li>
+            <li data-i18n="servicios.plan5Item3">Fechas y cupo limitados por temporada</li>
+            </ul>
+            <a href="#contacto" class="svc__cta" data-servicio="temporada"><span data-i18n="servicios.cotizar">Cotizar mi sesión</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <div class="plan plan--featured reveal">
-      <div class="plan__top">
-        <span class="plan__num">02</span>
-        <span class="plan__badge plan__badge--gold" data-i18n="servicios.badge2">Marca personal</span>
+    <aside class="svc__stage" aria-hidden="true">
+      <div class="svc__frame">
+        <figure class="svc__fig" data-index="0">
+          <img src="image/portafolio/retrato/retrato45.jpg" alt="" loading="eager" decoding="async" />
+          <figcaption><span class="svc__fig-num">01</span><span data-i18n="servicios.plan1Name">Retrato</span></figcaption>
+        </figure>
+        <figure class="svc__fig" data-index="1">
+          <img src="image/portafolio/lifestyle/lifestyle4.jpg" alt="" loading="lazy" decoding="async" />
+          <figcaption><span class="svc__fig-num">02</span><span data-i18n="servicios.plan2Name">Lifestyle</span></figcaption>
+        </figure>
+        <figure class="svc__fig" data-index="2">
+          <img src="image/portafolio/corporativo/corpo3.jpg" alt="" loading="lazy" decoding="async" />
+          <figcaption><span class="svc__fig-num">03</span><span data-i18n="servicios.plan3Name">Corporativo</span></figcaption>
+        </figure>
+        <figure class="svc__fig" data-index="3">
+          <img src="image/portafolio/pareja/pareja7.jpg" alt="" loading="lazy" decoding="async" />
+          <figcaption><span class="svc__fig-num">04</span><span data-i18n="servicios.plan4Name">Pareja</span></figcaption>
+        </figure>
+        <figure class="svc__fig" data-index="4">
+          <img src="image/portafolio/retrato/retrato43.jpg" alt="" loading="lazy" decoding="async" />
+          <figcaption><span class="svc__fig-num">05</span><span data-i18n="servicios.plan5Name">Sesiones de temporada</span></figcaption>
+        </figure>
       </div>
-      <h3 class="plan__name" data-i18n="servicios.plan2Name">Lifestyle</h3>
-      <p class="plan__desc" data-i18n="servicios.plan2Desc">Contenido para tu marca, tu emprendimiento o esa presencia digital que quieres construir en serio.</p>
-      <div class="plan__price">
-        <span class="plan__price-from" data-i18n="servicios.desde">Desde</span>
-        <span class="plan__price-num">$1,000</span>
-        <span class="plan__price-cur">MXN</span>
-      </div>
-      <ul class="plan__list">
-        <li data-i18n="servicios.plan2Item1">Dirección creativa incluida</li>
-        <li data-i18n="servicios.plan2Item2">Múltiples locaciones o escenas</li>
-        <li data-i18n="servicios.plan2Item3">Set completo para tus redes</li>
-      </ul>
-      <a href="#contacto" class="plan__cta plan__cta--gold" data-i18n="servicios.agendar">Agendar sesión</a>
-    </div>
-
-    <div class="plan reveal">
-      <div class="plan__top">
-        <span class="plan__num">03</span>
-        <span class="plan__badge" data-i18n="servicios.badge3">Para tu carrera</span>
-      </div>
-      <h3 class="plan__name" data-i18n="servicios.plan3Name">Corporativo</h3>
-      <p class="plan__desc" data-i18n="servicios.plan3Desc">LinkedIn, CV, presencia ejecutiva. La primera impresión que da tu imagen profesional.</p>
-      <div class="plan__price">
-        <span class="plan__price-from" data-i18n="servicios.desde">Desde</span>
-        <span class="plan__price-num">$900</span>
-        <span class="plan__price-cur">MXN</span>
-      </div>
-      <ul class="plan__list">
-        <li data-i18n="servicios.plan3Item1">Fondo neutro o de marca</li>
-        <li data-i18n="servicios.plan3Item2">Retoque profesional</li>
-        <li data-i18n="servicios.plan3Item3">Entrega en 3–5 días hábiles</li>
-      </ul>
-      <a href="#contacto" class="plan__cta" data-i18n="servicios.agendar">Agendar sesión</a>
-    </div>
-
+    </aside>
   </div>
 
-  <p class="servicios__note reveal">
-    <span data-i18n="servicios.notePre">¿Tu proyecto no encaja en ninguna categoría?</span>
-    <a href="#contacto" data-i18n="servicios.noteLink">Escríbeme</a>
-    <span data-i18n="servicios.notePost">y lo armamos juntos — cada precio es un punto de partida, no un límite.</span>
+  <!-- ── II · Dónde lo hacemos ── -->
+  <p class="servicios__block-label servicios__block-label--donde reveal">
+    <span class="servicios__block-num">II</span>
+    <span data-i18n="servicios.labelDonde">Dónde lo hacemos</span>
   </p>
+
+  <div class="donde">
+    <div class="donde__item reveal">
+      <span class="donde__ghost" aria-hidden="true" data-i18n="servicios.dondeTag1">Estudio</span>
+      <span class="donde__tag" data-i18n="servicios.dondeTag1">Estudio</span>
+      <h3 class="donde__name" data-i18n="servicios.donde1Name">Luz controlada, cero imprevistos.</h3>
+      <p class="donde__desc" data-i18n="servicios.donde1Desc">El entorno ideal para retrato, corporativo y sesiones con dirección: la luz es la misma de principio a fin.</p>
+    </div>
+    <div class="donde__item donde__item--featured reveal">
+      <span class="donde__ghost" aria-hidden="true" data-i18n="servicios.dondeTag2">Tu espacio</span>
+      <span class="donde__tag" data-i18n="servicios.dondeTag2">Tu espacio</span>
+      <h3 class="donde__name" data-i18n="servicios.donde2Name">Llevo el estudio a ti.</h3>
+      <p class="donde__desc" data-i18n="servicios.donde2Desc">Iluminación y fondo en tu casa, oficina o negocio. Perfecto para equipos de trabajo o si prefieres sentirte en terreno conocido.</p>
+      <p class="donde__note" data-i18n="servicios.donde2Note">Solo necesitas un espacio libre y un contacto de luz. El traslado se cotiza según la zona.</p>
+    </div>
+    <div class="donde__item reveal">
+      <span class="donde__ghost" aria-hidden="true" data-i18n="servicios.dondeTag3">Exterior</span>
+      <span class="donde__tag" data-i18n="servicios.dondeTag3">Exterior</span>
+      <h3 class="donde__name" data-i18n="servicios.donde3Name">Luz natural, ciudad real.</h3>
+      <p class="donde__desc" data-i18n="servicios.donde3Desc">Parques, calles y rincones de la ciudad con la luz del día. Si el clima no ayuda, reprogramamos sin costo.</p>
+    </div>
+  </div>
+
+  <div class="servicios__note reveal">
+    <p class="servicios__quote" data-i18n="servicios.cotizaNote">Cada sesión se cotiza según lo que necesites. Respondo en menos de 24 horas, sin compromiso.</p>
+    <p>
+      <span data-i18n="servicios.notePre">¿Tu proyecto no encaja en ninguna categoría?</span>
+      <a href="#contacto" data-i18n="servicios.noteLink">Escríbeme</a>
+      <span data-i18n="servicios.notePost">y lo armamos juntos.</span>
+    </p>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
@@ -413,55 +526,86 @@
     </p>
   </div>
 
-  <div class="proceso__steps">
-
-    <div class="step reveal">
-      <span class="step__num">01</span>
-      <div class="step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </div>
-      <h3 class="step__title" data-i18n="proceso.step1Title">Platícame tu idea</h3>
-      <p class="step__desc" data-i18n="proceso.step1Desc">Por WhatsApp o el formulario. Sin compromiso, sin tecnicismos — solo cuéntame qué tienes en mente.</p>
+  <div class="flow" id="flow">
+    <div class="flow__strip reveal" role="tablist">
+      <button type="button" class="flow__frame" role="tab" id="flow-t1" aria-selected="false" aria-controls="flow-p1" tabindex="-1">
+        <span class="flow__frame-num">01</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="flow__frame-title" data-i18n="proceso.step1Title">Platícame tu idea</span>
+        <span class="flow__frame-bar" aria-hidden="true"><i></i></span>
+      </button>
+      <button type="button" class="flow__frame" role="tab" id="flow-t2" aria-selected="false" aria-controls="flow-p2" tabindex="-1">
+        <span class="flow__frame-num">02</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span class="flow__frame-title" data-i18n="proceso.step2Title">Preparamos juntos</span>
+        <span class="flow__frame-bar" aria-hidden="true"><i></i></span>
+      </button>
+      <button type="button" class="flow__frame" role="tab" id="flow-t3" aria-selected="false" aria-controls="flow-p3" tabindex="-1">
+        <span class="flow__frame-num">03</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <span class="flow__frame-title" data-i18n="proceso.step3Title">La sesión</span>
+        <span class="flow__frame-bar" aria-hidden="true"><i></i></span>
+      </button>
+      <button type="button" class="flow__frame" role="tab" id="flow-t4" aria-selected="false" aria-controls="flow-p4" tabindex="-1">
+        <span class="flow__frame-num">04</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span class="flow__frame-title" data-i18n="proceso.step4Title">Recibes tus fotos</span>
+        <span class="flow__frame-bar" aria-hidden="true"><i></i></span>
+      </button>
     </div>
 
-    <div class="step reveal">
-      <span class="step__num">02</span>
-      <div class="step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      </div>
-      <h3 class="step__title" data-i18n="proceso.step2Title">Preparamos juntos</h3>
-      <p class="step__desc" data-i18n="proceso.step2Desc">Un cuestionario breve me dice qué te inspira, qué te incomoda y qué buscas lograr. Llego a la sesión ya sabiendo cómo dirigirte.</p>
+    <div class="flow__panel reveal">
+      <span class="flow__corner flow__corner--tl" aria-hidden="true"></span>
+      <span class="flow__corner flow__corner--tr" aria-hidden="true"></span>
+      <span class="flow__corner flow__corner--bl" aria-hidden="true"></span>
+      <span class="flow__corner flow__corner--br" aria-hidden="true"></span>
+      <span class="flow__rec" aria-hidden="true"><i></i>REC</span>
+      <article class="flow__step" role="tabpanel" id="flow-p1" aria-labelledby="flow-t1">
+        <span class="flow__big" aria-hidden="true">01</span>
+        <div class="flow__text">
+          <span class="flow__hud-tag" aria-hidden="true">01 / 04 · f/1.8 · ISO 100</span>
+          <h3 class="flow__title" data-i18n="proceso.step1Title">Platícame tu idea</h3>
+          <p class="flow__desc" data-i18n="proceso.step1Desc">Por WhatsApp o el formulario. Sin compromiso, sin tecnicismos — solo cuéntame qué tienes en mente.</p>
+        </div>
+      </article>
+      <article class="flow__step" role="tabpanel" id="flow-p2" aria-labelledby="flow-t2">
+        <span class="flow__big" aria-hidden="true">02</span>
+        <div class="flow__text">
+          <span class="flow__hud-tag" aria-hidden="true">02 / 04 · f/2.8 · 1/125</span>
+          <h3 class="flow__title" data-i18n="proceso.step2Title">Preparamos juntos</h3>
+          <p class="flow__desc" data-i18n="proceso.step2Desc">Un cuestionario breve me dice qué te inspira, qué te incomoda y qué buscas lograr. Llego a la sesión ya sabiendo cómo dirigirte.</p>
+        </div>
+      </article>
+      <article class="flow__step" role="tabpanel" id="flow-p3" aria-labelledby="flow-t3">
+        <span class="flow__big" aria-hidden="true">03</span>
+        <div class="flow__text">
+          <span class="flow__hud-tag" aria-hidden="true">03 / 04 · f/2.0 · 1/200</span>
+          <h3 class="flow__title" data-i18n="proceso.step3Title">La sesión</h3>
+          <p class="flow__desc" data-i18n="proceso.step3Desc">Te doy indicaciones claras, pose por pose. No tienes que saber qué hacer con las manos — para eso estoy yo.</p>
+        </div>
+      </article>
+      <article class="flow__step" role="tabpanel" id="flow-p4" aria-labelledby="flow-t4">
+        <span class="flow__big" aria-hidden="true">04</span>
+        <div class="flow__text">
+          <span class="flow__hud-tag" aria-hidden="true">04 / 04 · f/4 · ISO 100</span>
+          <h3 class="flow__title" data-i18n="proceso.step4Title">Recibes tus fotos</h3>
+          <p class="flow__desc" data-i18n="proceso.step4Desc">En 3 a 7 días según el tipo de sesión, vía Pixieset. Fotos editadas, listas para presumir.</p>
+        </div>
+      </article>
     </div>
-
-    <div class="step reveal">
-      <span class="step__num">03</span>
-      <div class="step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-      </div>
-      <h3 class="step__title" data-i18n="proceso.step3Title">La sesión</h3>
-      <p class="step__desc" data-i18n="proceso.step3Desc">Te doy indicaciones claras, pose por pose. No tienes que saber qué hacer con las manos — para eso estoy yo.</p>
-    </div>
-
-    <div class="step reveal">
-      <span class="step__num">04</span>
-      <div class="step__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      </div>
-      <h3 class="step__title" data-i18n="proceso.step4Title">Recibes tus fotos</h3>
-      <p class="step__desc" data-i18n="proceso.step4Desc">En 3 a 7 días según el paquete, vía Pixieset. Fotos editadas, listas para presumir.</p>
-    </div>
-
   </div>
 
-  <div class="proceso__payment reveal">
-    <div class="proceso__payment-item">
-      <span class="proceso__payment-num">50%</span>
-      <span class="proceso__payment-label" data-i18n="proceso.pay1">Anticipo al agendar tu fecha</span>
-    </div>
-    <div class="proceso__payment-divider"></div>
-    <div class="proceso__payment-item">
-      <span class="proceso__payment-num">50%</span>
-      <span class="proceso__payment-label" data-i18n="proceso.pay2">Restante al momento de entrega</span>
+  <div class="pay reveal">
+    <div class="pay__track" aria-hidden="true"><span></span><span></span></div>
+    <div class="pay__items">
+      <div class="pay__item">
+        <span class="pay__num">50%</span>
+        <span class="pay__label" data-i18n="proceso.pay1">Anticipo al agendar tu fecha</span>
+      </div>
+      <div class="pay__item">
+        <span class="pay__num">50%</span>
+        <span class="pay__label" data-i18n="proceso.pay2">Restante al momento de entrega</span>
+      </div>
     </div>
   </div>
 </section>
@@ -475,62 +619,114 @@
     <span class="intro__label-text" data-i18n="testimonios.label">Testimonios</span>
   </div>
 
-  <div class="testimonios__carousel reveal">
-    <div class="testimonios__track" id="testTrack">
+  <div class="testimonios__carousel reveal" id="testi" aria-roledescription="carousel">
+    <div class="testimonios__track" id="testiTrack">
 
-      <div class="testimonio">
-        <div class="testimonio__stars">★★★★★</div>
-        <p class="testimonio__quote" data-i18n="testimonios.q1">"Memo supo capturar exactamente lo que quería. Las fotos quedaron naturales y muy profesionales — sin duda lo recomiendo."</p>
+      <div class="testimonio testimonio--long" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q1">"Hacerme esta sesión de fotos fue una de las mejores decisiones que he tomado. Me sorprendió muchísimo la creatividad de Memo para aprovechar cada detalle y convertirlo en una obra de arte. Salí increíble en las fotos, pero lo que más agradezco es el ambiente que creó: fue muy paciente, amable y profesional. Tiene un don para captar la esencia de las personas. ¡Repetiría sin dudarlo!"</p>
         <div class="testimonio__author">
-          <span class="testimonio__initials">CM</span>
+          <span class="testimonio__initials" aria-hidden="true">JA</span>
           <div>
-            <span class="testimonio__name">Camila M.</span>
-            <span class="testimonio__service" data-i18n="testimonios.s1">Sesión de retrato</span>
+            <span class="testimonio__name">Jazmin</span>
+            <span class="testimonio__service" data-i18n="testimonios.s1">Sesión de fotos</span>
           </div>
         </div>
       </div>
-
-      <div class="testimonio">
-        <div class="testimonio__stars">★★★★★</div>
-        <p class="testimonio__quote" data-i18n="testimonios.q2">"Necesitaba fotos para mi LinkedIn y quedé muy contento con el resultado. Profesional, puntual y con muy buen ojo."</p>
+      <div class="testimonio testimonio--md" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q2">"Me encantó la disposición que tienen, la paciencia y la creatividad, realmente te tomas muy enserio que todo salga bien, me sorprendió que estudiaras el lugar donde serían las fotografías, fue divertido y muy grato, mi esposo y yo quedamos encantados con el trabajo."</p>
         <div class="testimonio__author">
-          <span class="testimonio__initials">AR</span>
+          <span class="testimonio__initials" aria-hidden="true">ER</span>
           <div>
-            <span class="testimonio__name">Andrés R.</span>
-            <span class="testimonio__service" data-i18n="testimonios.s2">Fotografía corporativa</span>
+            <span class="testimonio__name">Estefani R.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s2">Sesión de pareja</span>
           </div>
         </div>
       </div>
-
-      <div class="testimonio">
-        <div class="testimonio__stars">★★★★★</div>
-        <p class="testimonio__quote" data-i18n="testimonios.q3">"Las fotos de nuestra sesión de pareja quedaron hermosas. Nos hizo sentir muy cómodos durante toda la sesión — ¡volveremos!"</p>
+      <div class="testimonio testimonio--long" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q3">"¡Hay vibra! Fue una experiencia increíble de principio a fin. Lo que más destaco es la paciencia y la orientación en las poses; yo no sabía mucho cómo acomodarme, pero me ayudó a ganar muchísima confianza dándome opciones que fluyen súper natural. Me encantó que no solo te guía con su ojo profesional, sino que tiene la apertura de dejarte proponer ideas propias, lo que hace que todo se sienta muy auténtico y con mucho estilo. Si buscas a alguien que te haga sentir cómoda, segura y que capture lo mejor de ti con un trato de diez, ¡es por aquí! ¡Súper recomendado!"</p>
         <div class="testimonio__author">
-          <span class="testimonio__initials">LP</span>
+          <span class="testimonio__initials" aria-hidden="true">@</span>
           <div>
-            <span class="testimonio__name">Laura & Pablo</span>
-            <span class="testimonio__service" data-i18n="testimonios.s3">Sesión de pareja</span>
+            <span class="testimonio__name">@_lamimosaa</span>
+            <span class="testimonio__service" data-i18n="testimonios.s3">Marca personal</span>
           </div>
         </div>
       </div>
-
-      <div class="testimonio">
-        <div class="testimonio__stars">★★★★★</div>
-        <p class="testimonio__quote" data-i18n="testimonios.q4">"Muy creativo con la iluminación. Las fotos para mi marca personal superaron mis expectativas. 100% recomendado."</p>
+      <div class="testimonio testimonio--md" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q4">"Tuvimos una sesión en pareja y nos ayudó mucho a que todo fluyera, porque al principio no sabíamos cómo posar o qué hacer. El trabajo fue entregado a tiempo y con muy buena calidad. Sin duda lo recomiendo siempre fue muy amable,paciente y sobre todo profesional."</p>
         <div class="testimonio__author">
-          <span class="testimonio__initials">SV</span>
+          <span class="testimonio__initials" aria-hidden="true">EC</span>
           <div>
-            <span class="testimonio__name">Sofía V.</span>
-            <span class="testimonio__service" data-i18n="testimonios.s4">Marca personal</span>
+            <span class="testimonio__name">Estefania C.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s4">Sesión de pareja</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonio testimonio--md" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q5">"Fue mi 1ra vez en la sesion de fotos, guillermo es muy profesional y te da varias ideas, modelos y sobre todo confiamza de soltarte estar lo mas normal y natural posible para salir bien en las fotos ampliamente recomendado sin duda volvería a ir"</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials" aria-hidden="true">AR</span>
+          <div>
+            <span class="testimonio__name">Angel R.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s5">Sesión de fotos</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonio testimonio--md" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q6">"en todo momento me hicieron sentir segura, soy muy bajita y acomodaron la base de la camara para que todo saliera bien, me mostraron la foto y me dieron la opcion de tomarla de nuevo ... gracias"</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials" aria-hidden="true">MG</span>
+          <div>
+            <span class="testimonio__name">Mariana G.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s6">Fotografía corporativa</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonio testimonio--md" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q7">"Fue una sesión dinamica, el trato fue cordial, como tal las fotos se tomaron con atención al detalle para que podamos lucir lo mejor posible. Se tomaron la molestia de dar sus recomendaciones para que la foto salga bien."</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials" aria-hidden="true">LR</span>
+          <div>
+            <span class="testimonio__name">Luis Angel R.</span>
+            <span class="testimonio__service" data-i18n="testimonios.s7">Fotografía corporativa</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonio" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q8">"Se tomó el tiempo para indicarme la mejor postura para la foto, así como validar conmigo si estaba conforme con la imagen."</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials" aria-hidden="true">AN</span>
+          <div>
+            <span class="testimonio__name" data-i18n="testimonios.anon">Anónimo</span>
+            <span class="testimonio__service" data-i18n="testimonios.s8">Fotografía corporativa</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonio" role="group" aria-roledescription="slide">
+        <div class="testimonio__stars" role="img" aria-label="5/5">★★★★★</div>
+        <p class="testimonio__quote" data-i18n="testimonios.q9">"La confianza que nos brindaste para proponer y sentirnos cómodos con las poses."</p>
+        <div class="testimonio__author">
+          <span class="testimonio__initials" aria-hidden="true">AN</span>
+          <div>
+            <span class="testimonio__name" data-i18n="testimonios.anon">Anónimo</span>
+            <span class="testimonio__service" data-i18n="testimonios.s9">Sesión de pareja</span>
           </div>
         </div>
       </div>
 
     </div>
 
-    <button class="test-nav test-nav--prev" id="testPrev" aria-label="Anterior">‹</button>
-    <button class="test-nav test-nav--next" id="testNext" aria-label="Siguiente">›</button>
-    <div class="test-dots" id="testDots"></div>
+    <button class="test-nav test-nav--prev" id="testiPrev" aria-label="Anterior">‹</button>
+    <button class="test-nav test-nav--next" id="testiNext" aria-label="Siguiente">›</button>
+    <div class="test-dots" id="testiDots"></div>
   </div>
 </section>
 
@@ -558,7 +754,7 @@
           <span class="contacto__link-label" data-i18n="contacto.correo">Correo</span>
           <span class="contacto__link-value">guillermo.alvarez.photos@gmail.com</span>
         </a>
-        <a href="https://wa.me/5215662999954" target="_blank" class="contacto__link">
+        <a href="https://wa.me/5215624704424" target="_blank" class="contacto__link">
           <span class="contacto__link-label">WhatsApp</span>
           <span class="contacto__link-value" data-i18n="contacto.escribeme">Escríbeme directo ↗</span>
         </a>
@@ -599,6 +795,7 @@
           <option value="lifestyle" data-i18n="form.tipoLifestyle">Lifestyle / Marca personal</option>
           <option value="corporativo" data-i18n="form.tipoCorporativo">Corporativo</option>
           <option value="pareja" data-i18n="form.tipoPareja">Pareja</option>
+          <option value="temporada" data-i18n="form.tipoTemporada">Sesión de temporada</option>
           <option value="otro" data-i18n="form.otro">Otro</option>
         </select>
       </div>
@@ -769,7 +966,7 @@
     <div class="footer__social">
       <a href="https://www.instagram.com/clickbymemo/" target="_blank" aria-label="Instagram">IG</a>
       <a href="https://www.facebook.com/memoAlvarez625" target="_blank" aria-label="Facebook">FB</a>
-      <a href="https://wa.me/5215662999954" target="_blank" aria-label="WhatsApp">WA</a>
+      <a href="https://wa.me/5215624704424" target="_blank" aria-label="WhatsApp">WA</a>
     </div>
   </div>
 
@@ -780,7 +977,7 @@
 </footer>
 
 <!-- WhatsApp flotante -->
-<a href="https://wa.me/5215662999954" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/5215624704424" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.428a.75.75 0 0 0 .916.916l5.566-1.475A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.662-.523-5.17-1.432l-.36-.216-3.862 1.023 1.023-3.747-.236-.374A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
@@ -799,5 +996,8 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/proceso.js"></script>
+<script src="js/testimonios.js"></script>
 </body>
 </html>

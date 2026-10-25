@@ -3,3 +3,8 @@
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+# URLs limpias: /encuesta → encuesta.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
