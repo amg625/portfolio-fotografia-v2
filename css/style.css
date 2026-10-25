@@ -1,40 +1,67 @@
 /* ═══════════════════════════════════════════
-   OBSCURA V3 — Sistema de diseño
-   Fraunces + Instrument Sans + JetBrains Mono
-   Negro suave + Dorado acento
+   SISTEMA DE DISEÑO — Azul marino + Literata / Figtree
+   Tipografía: Literata (títulos) + Figtree (texto y etiquetas)
+   Color: azul marino con escala de 6 tonos (ver --azul-1 … --azul-6)
 ═══════════════════════════════════════════ */
 
 :root {
-  --dorado:          #c9a84c;
-  --dorado-soft:      #d9be6f;
-  --dorado-deep:      #8f7530;
-  --dorado-glow:      rgba(201, 168, 76, 0.25);
+  --f-display: 'Literata', Georgia, 'Times New Roman', serif;
+  --f-body:    'Figtree', -apple-system, 'Segoe UI', system-ui, sans-serif;
+  --f-label:   var(--f-body);   /* etiquetas pequeñas (antes monoespaciada) */
 }
 
 [data-theme="dark"] {
-  --bg:              #0a0a0d;
-  --bg-elev:         #131317;
-  --bg-panel:        #17171c;
-  --text:            #f2ede2;
-  --text-muted:      #8a8479;
-  --text-faint:      #4a4638;
-  --line:            rgba(242, 237, 226, 0.08);
-  --line-strong:     rgba(242, 237, 226, 0.16);
-  --accent:          var(--dorado);
-  --accent-soft:     var(--dorado-glow);
+  /* escala de azul (oscuro): 1 más claro → 6 más hundido */
+  --azul-1: #D6E4F8;   /* títulos destacados, hover de botón */
+  --azul-2: #9DBDE8;   /* acento / enlaces / texto */
+  --azul-3: #5B88C8;   /* íconos, detalles */
+  --azul-4: #3A66A3;   /* rellenos */
+  --azul-5: #233A5C;   /* etiquetas, resaltados */
+  --azul-6: #1A2433;   /* superficies suaves */
+
+  --bg:              #0E1218;
+  --bg-elev:         #151B23;
+  --bg-panel:        #1A2230;
+  --text:            #EDEFF2;
+  --text-muted:      #A5AEBA;
+  --text-faint:      #8A94A1;
+  --line:            rgba(237, 239, 242, 0.10);
+  --line-strong:     rgba(237, 239, 242, 0.22);
+  --accent:          var(--azul-2);
+  --accent-hover:    var(--azul-1);
+  --on-accent:       #0E1218;
+  --accent-soft:     rgba(157, 189, 232, 0.20);
 }
 
 [data-theme="light"] {
-  --bg:              #f4efe6;
-  --bg-elev:         #ede7dc;
-  --bg-panel:        #ffffff;
-  --text:            #14140e;
-  --text-muted:      #6b6558;
-  --text-faint:      #a89f8e;
-  --line:            rgba(20, 20, 14, 0.10);
-  --line-strong:     rgba(20, 20, 14, 0.22);
-  --accent:          var(--dorado-deep);
-  --accent-soft:     rgba(143, 117, 48, 0.15);
+  --azul-1: #0F2547;   /* títulos destacados, hover de botón */
+  --azul-2: #1F3C66;   /* acento / enlaces / texto */
+  --azul-3: #36568A;   /* íconos, texto grande */
+  --azul-4: #7F9CC4;   /* líneas y detalles (NO texto) */
+  --azul-5: #C9D8EC;   /* etiquetas, resaltados */
+  --azul-6: #E3EBF5;   /* fondos suaves */
+
+  --bg:              #F4F0EA;
+  --bg-elev:         #EBE5DC;
+  --bg-panel:        #FBF8F3;
+  --text:            #17120F;
+  --text-muted:      #5B534D;
+  --text-faint:      #6E665F;
+  --line:            rgba(23, 18, 15, 0.12);
+  --line-strong:     rgba(23, 18, 15, 0.26);
+  --accent:          var(--azul-2);
+  --accent-hover:    var(--azul-1);
+  --on-accent:       #FBF6F1;
+  --accent-soft:     rgba(31, 60, 102, 0.14);
+}
+
+/* Zonas que siempre van sobre fondo oscuro (foto del hero, visor de fotos):
+   usan los tonos claros del azul aunque el sitio esté en tema claro */
+.hero, #lightbox {
+  --accent:       #9DBDE8;
+  --accent-hover: #D6E4F8;
+  --on-accent:    #0E1218;
+  --accent-soft:  rgba(157, 189, 232, 0.20);
 }
 
 /* ═══════════════════════════════════════════
@@ -51,7 +78,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  font-family: var(--f-body);
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
@@ -75,7 +102,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* Utility labels */
 .type-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -105,12 +132,13 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .nav__brand { display: flex; align-items: center; }
 .nav__logo {
-  height: 40px;
+  height: 54px;
+  margin: -7px 0;   /* el logo crece sin hacer más alta la barra */
   width: auto;
   filter: brightness(0) invert(1);
   transition: filter 0.4s ease, height 0.3s ease;
 }
-.nav.scrolled .nav__logo { height: 34px; }
+.nav.scrolled .nav__logo { height: 44px; margin: -5px 0; }
 [data-theme="light"] .nav__logo { filter: none; }
 .nav.scrolled[data-theme] .nav__logo,
 .nav.scrolled .nav__logo {
@@ -120,12 +148,16 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 [data-theme="light"] .nav__logo {
   filter: none;
 }
+/* Tema claro: mientras la barra está sobre la foto oscura del hero, el logo va en blanco;
+   al hacer scroll (barra con fondo claro) vuelve a sus colores */
+[data-theme="light"] .nav:not(.scrolled) .nav__logo {
+  filter: brightness(0) invert(1);
+}
 
 .nav__brand-fallback {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-size: 1.1rem;
   font-weight: 400;
-  font-variation-settings: "opsz" 60, "SOFT" 30;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -139,7 +171,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   box-shadow: 0 0 12px var(--accent);
 }
 .nav__brand-italic {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-style: italic;
   font-weight: 300;
   color: rgba(255,255,255,0.5);
@@ -148,7 +180,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .nav__links { display: flex; gap: 36px; list-style: none; }
 .nav__links a {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -182,7 +214,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .nav.scrolled .toggle { border-color: var(--line-strong); background: var(--bg-elev); }
 .toggle button {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   padding: 6px 12px;
@@ -218,7 +250,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .nav { padding: 16px 20px; grid-template-columns: 1fr auto; }
   .nav.scrolled { padding: 12px 20px; }
   .nav__links { display: none; }
-  .nav__logo { height: 32px; }
+  .nav__logo { height: 44px; margin: -5px 0; }
   .nav__menu-btn { display: flex; flex-direction: column; gap: 4px; padding: 8px; }
   .nav__menu-btn span { display: block; width: 20px; height: 1px; background: #fff; transition: background 0.3s; }
   .nav.scrolled .nav__menu-btn span { background: var(--text); }
@@ -241,7 +273,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .mobile-menu.open { transform: translateX(0); }
 .mobile-menu a {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-size: 1.5rem;
   font-weight: 300;
   padding: 14px 0;
@@ -291,26 +323,24 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   display: flex; flex-direction: column; gap: 8px;
 }
 .hero__index-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase;
   color: rgba(255,255,255,0.55);
 }
 .hero__index-number {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-family: var(--f-display);
   font-weight: 300; font-size: 2rem; line-height: 1; color: #fff;
   display: flex; align-items: baseline; gap: 8px;
 }
 .hero__index-number .divider { width: 40px; height: 1px; background: var(--accent); margin-left: 10px; align-self: center; }
 .hero__index-number .total {
   font-size: 0.75rem; color: rgba(255,255,255,0.5);
-  font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;
+  font-family: var(--f-label); letter-spacing: 0.05em;
 }
 
 .hero__title {
   grid-column: 1 / -1;
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(3rem, 6vw, 6.5rem);
   line-height: 0.92;
@@ -319,24 +349,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   text-wrap: balance;
 }
 .hero__title-em {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-style: italic; font-weight: 300;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
   color: var(--accent);
   display: inline-block;
 }
 
 .hero__meta { display: flex; flex-direction: column; gap: 20px; max-width: 480px; }
 .hero__sub {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 24, "SOFT" 60;
+  font-family: var(--f-display);
   font-weight: 300; font-style: italic;
   font-size: 1.15rem; line-height: 1.5;
   color: rgba(255,255,255,0.85);
 }
 .hero__location {
   display: flex; align-items: center; gap: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
   color: rgba(255,255,255,0.55);
 }
@@ -352,15 +380,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .hero__cta {
   display: inline-flex; align-items: center; gap: 14px;
   padding: 18px 32px;
-  background: var(--accent); color: #0a0a0d;
-  font-family: 'JetBrains Mono', monospace;
+  background: var(--accent); color: var(--on-accent);
+  font-family: var(--f-label);
   font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
   transition: all 0.35s ease;
   position: relative; overflow: hidden;
 }
 .hero__cta::before {
   content: ''; position: absolute; inset: 0;
-  background: var(--dorado-soft);
+  background: var(--accent-hover);
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.65,0,0.35,1);
   z-index: 0;
@@ -374,7 +402,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   display: inline-flex; align-items: center; gap: 10px;
   padding: 18px 8px;
   color: rgba(255,255,255,0.9);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
   transition: color 0.3s;
   position: relative;
@@ -389,7 +417,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .scroll-hint {
   position: absolute; bottom: 32px; left: 52%; z-index: 3;
   display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
   color: rgba(255,255,255,0.4);
 }
@@ -426,8 +454,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .marquee { overflow: hidden; padding: 28px 0; border-bottom: 1px solid var(--line); background: var(--bg-elev); position: relative; }
 .marquee__track { display: flex; gap: 50px; animation: marquee 45s linear infinite; width: max-content; }
 .marquee__item {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 96, "SOFT" 60;
+  font-family: var(--f-display);
   font-weight: 300; font-size: 2rem; color: var(--text);
   white-space: nowrap; display: flex; align-items: center; gap: 50px;
 }
@@ -442,12 +469,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 ═══════════════════════════════════════════ */
 .intro__label { display: flex; flex-direction: column; gap: 8px; }
 .intro__label-num {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 96, "SOFT" 100;
+  font-family: var(--f-display);
   font-size: 2.5rem; font-weight: 300; color: var(--accent); line-height: 1;
 }
 .intro__label-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-muted);
 }
 
@@ -461,13 +487,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .intro__body { display: flex; flex-direction: column; gap: 32px; }
 .intro__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 80;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(1.9rem, 3.8vw, 3.2rem);
   line-height: 1.1; letter-spacing: -0.02em;
 }
-.intro__heading em { font-family: 'Fraunces', serif; font-style: italic; color: var(--accent); }
+.intro__heading em { font-family: var(--f-display); font-style: italic; color: var(--accent); }
 .intro__text { font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); max-width: 620px; }
 .intro__text strong { color: var(--text); font-weight: 500; }
 
@@ -492,29 +517,28 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border: 1px dashed var(--line-strong);
   display: flex; align-items: center; justify-content: center;
   color: var(--text-faint);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.75rem; letter-spacing: 0.1em;
 }
 .estudio__photo-tag {
   position: absolute; bottom: -1px; left: -1px;
   background: var(--accent);
-  color: #0a0a0d;
+  color: var(--on-accent);
   padding: 14px 20px;
   display: flex; align-items: center; gap: 10px;
 }
 .estudio__photo-tag-num {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-weight: 500; font-size: 1.1rem;
 }
 .estudio__photo-tag-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
 }
 
 .estudio__content { display: flex; flex-direction: column; gap: 28px; }
 .estudio__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 90;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(2.2rem, 4.2vw, 3.6rem);
   line-height: 1.05;
@@ -532,12 +556,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .estudio__stat { display: flex; flex-direction: column; gap: 6px; }
 .estudio__stat-num {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 60, "SOFT" 80;
+  font-family: var(--f-display);
   font-size: 1.7rem; font-weight: 400; color: var(--accent);
 }
 .estudio__stat-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint);
 }
 
@@ -567,8 +590,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .trabajo__header { margin-bottom: 48px; display: flex; flex-direction: column; gap: 20px; }
 .trabajo__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 90;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   line-height: 1.02;
@@ -576,9 +598,37 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .trabajo__heading em { font-style: italic; color: var(--accent); }
 
-.trabajo__filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+/* Barra: filtros a la izquierda, contador + Pausar/Barajar a la derecha */
+.trabajo__bar {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 18px 24px;
+  margin-bottom: 48px;
+}
+.trabajo__filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.trabajo__tools { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.trabajo__count {
+  font-family: var(--f-label);
+  font-size: 0.68rem; letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-right: 6px;
+}
+.trabajo__tool {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--f-label);
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  color: var(--text-muted);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.trabajo__tool:hover { border-color: var(--accent); color: var(--accent); }
+.trabajo__tool svg { width: 13px; height: 13px; flex: 0 0 auto; transition: transform 0.5s cubic-bezier(.2,.7,.2,1); }
+#trabajoShuffle:hover svg { transform: rotate(180deg); }
+.trabajo__tool[hidden] { display: none; }
 .filter-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
   padding: 10px 20px;
   border: 1px solid var(--line-strong);
@@ -593,12 +643,66 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: var(--accent-soft);
 }
 
-/* ── Filas dinámicas con auto-scroll + drag ── */
+/* ── Mesa de copias ("Todo"): fotos como copias impresas que cambian solas ── */
+.trabajo {
+  --paper: #FBF8F3;
+  --paper-ink: #5B534D;
+  --print-shadow: rgba(0,0,0,0.6);
+}
+[data-theme="light"] .trabajo { --print-shadow: rgba(45,32,20,0.42); }
+
+.trabajo__mesa { columns: 4 230px; column-gap: 38px; padding: 6px 4px 0; min-height: 300px; }
+.trabajo__mesa[hidden] { display: none; }
+.trabajo__empty { color: var(--text-muted); padding: 40px 0; column-span: all; }
+
+.trabajo__print {
+  display: block; width: 100%; margin: 0 0 40px; text-align: left;
+  break-inside: avoid; position: relative; cursor: pointer;
+  background: var(--paper); padding: 12px 12px 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 22px 36px -20px var(--print-shadow), 0 3px 8px -2px rgba(0,0,0,0.18);
+  --r: 0deg; --dy: 0px; --d: 0s;
+  opacity: 0; transform: translateY(70px) rotate(calc(var(--r) * 3.2)) scale(0.93);
+  transition: none; will-change: transform, opacity;
+}
+.trabajo__print img { width: 100%; height: auto; background: #cfc8bc; }
+.trabajo__print-cap {
+  display: block; padding: 11px 2px 3px;
+  font-family: var(--f-display); font-style: italic; font-weight: 400;
+  font-size: 0.95rem; line-height: 1.2; color: var(--paper-ink);
+}
+.trabajo__print.is-in {
+  opacity: 1; transform: translateY(var(--dy)) rotate(var(--r));
+  transition: transform 0.85s cubic-bezier(.2,.8,.2,1) var(--d), opacity 0.55s ease var(--d);
+}
+.trabajo__print.is-settled { transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s ease; }
+.trabajo__print.is-out {
+  opacity: 0; transform: translateY(-34px) rotate(calc(var(--r) * -2)) scale(0.94);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.trabajo__print.is-settled:focus-visible,
+.trabajo__print.is-settled:hover {
+  transform: translateY(calc(var(--dy) - 10px)) rotate(0deg) scale(1.035); z-index: 5;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 40px 56px -22px var(--print-shadow), 0 6px 14px -2px rgba(0,0,0,0.22);
+}
+@media (hover: none) {
+  /* en pantallas táctiles el "hover" se queda pegado tras tocar: no lo usamos */
+  .trabajo__print.is-settled:hover {
+    transform: translateY(var(--dy)) rotate(var(--r)); z-index: auto;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 22px 36px -20px var(--print-shadow), 0 3px 8px -2px rgba(0,0,0,0.18);
+  }
+}
+
+/* ── Filas dinámicas con auto-scroll + drag (al elegir una categoría) ── */
 .trabajo__rows {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 14px;
+  opacity: 0;
+  transition: opacity 0.45s ease;
 }
+.trabajo__rows.is-active { display: flex; }
+.trabajo__rows.on { opacity: 1; }
 
 .trabajo__row {
   overflow: hidden;
@@ -644,7 +748,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .trabajo__row-item:hover .trabajo__item-overlay { opacity: 1; }
 .trabajo__row-item .trabajo__item-overlay span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #fff;
 }
 .trabajo__row-item .zoom-btn {
@@ -659,15 +763,25 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 @media (max-width: 1100px) {
   .trabajo__row-item { height: 300px; }
+  .trabajo__mesa { columns: 3 160px; column-gap: 26px; }
 }
 @media (max-width: 768px) {
   .trabajo { padding: 40px 20px 70px; }
+  .trabajo__bar { margin-bottom: 36px; }
   .trabajo__rows { gap: 10px; }
   .trabajo__row-item { height: 220px; }
   .trabajo__row-track { gap: 10px; }
+  .trabajo__mesa { columns: 2 140px; column-gap: 18px; }
+  .trabajo__print { margin-bottom: 26px; padding: 8px 8px 6px; }
+  .trabajo__print-cap { font-size: 0.82rem; padding-top: 8px; }
 }
 @media (max-width: 480px) {
   .trabajo__row-item { height: 170px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trabajo__print { opacity: 1 !important; transform: translateY(var(--dy)) rotate(var(--r)) !important; transition: none !important; }
+  .trabajo__print.is-settled:hover { transform: translateY(var(--dy)) rotate(0deg) !important; }
+  .trabajo__rows { transition: none; }
 }
 
 .trabajo__more { text-align: center; margin-top: 56px; }
@@ -676,7 +790,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   padding: 15px 28px;
   border: 1px solid var(--line-strong);
   color: var(--text);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
   transition: all 0.3s ease;
 }
@@ -700,8 +814,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   gap: 24px;
 }
 .servicios__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 90;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(2.2rem, 4.4vw, 3.6rem);
   line-height: 1.08;
@@ -720,7 +833,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   align-items: center;
   gap: 14px;
   margin-bottom: 28px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -772,15 +885,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .svc__trigger:hover { color: var(--text); }
 .svc__trigger:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 .svc__num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   color: var(--text-faint);
   transition: color 0.35s ease;
 }
 .svc__name {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 120, "SOFT" 80;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(1.9rem, 3.6vw, 3rem);
   line-height: 1.05;
@@ -825,7 +937,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .svc__thumb { display: none; }
 .svc__badge {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.6rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -862,12 +974,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   margin-bottom: 36px;
   padding: 14px 22px;
   border: 1px solid var(--accent);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--accent);
   transition: background 0.3s ease, color 0.3s ease, gap 0.3s ease;
 }
-.svc__cta:hover { background: var(--accent); color: #0a0a0d; gap: 22px; }
+.svc__cta:hover { background: var(--accent); color: var(--on-accent); gap: 22px; }
 
 /* escenario de foto (escritorio) */
 .svc__stage {
@@ -923,12 +1035,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .svc__fig figcaption {
   position: absolute; left: 22px; bottom: 20px; z-index: 3;
   display: flex; align-items: baseline; gap: 12px;
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
   font-size: 1.25rem; color: #f3efe6;
 }
 .svc__fig-num {
-  font-family: 'JetBrains Mono', monospace; font-style: normal;
-  font-size: 0.68rem; letter-spacing: 0.12em; color: var(--dorado-soft, #e0c97a);
+  font-family: var(--f-label); font-style: normal;
+  font-size: 0.68rem; letter-spacing: 0.12em; color: var(--accent);
 }
 
 .servicios__note {
@@ -942,8 +1054,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   align-items: center;
 }
 .servicios__quote {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 60, "SOFT" 60;
+  font-family: var(--f-display);
   font-style: italic;
   font-weight: 300;
   font-size: clamp(1.15rem, 2vw, 1.5rem);
@@ -976,8 +1087,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .donde__item:last-child { border-right: 0; }
 .donde__ghost {                  /* palabra gigante de fondo */
   position: absolute; left: 24px; bottom: -0.04em; z-index: -1;
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-family: var(--f-display);
   font-weight: 300; font-style: italic;
   font-size: clamp(3rem, 5vw, 5.4rem);
   line-height: 1; white-space: nowrap;
@@ -993,13 +1103,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .donde__item--featured .donde__ghost { -webkit-text-stroke-color: var(--accent-soft); }
 .donde__tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--accent);
 }
 .donde__name {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 60, "SOFT" 60;
+  font-family: var(--f-display);
   font-weight: 400; font-size: 1.6rem; line-height: 1.2;
   max-width: 14em;
 }
@@ -1012,7 +1121,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   margin-top: 6px;
   padding-top: 14px;
   border-top: 1px dashed var(--line-strong);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.66rem; letter-spacing: 0.04em; line-height: 1.7;
   color: var(--text-muted);
   max-width: 30em;
@@ -1066,8 +1175,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .proceso__intro .intro__label { align-items: center; }
 .proceso__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 90;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(2.2rem, 4.4vw, 3.6rem);
   line-height: 1.08;
@@ -1116,15 +1224,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .flow__frame:hover { background: var(--bg-elev); color: var(--text); }
 .flow__frame:focus-visible { outline: 1px solid var(--accent); outline-offset: -4px; }
 .flow__frame-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.72rem; letter-spacing: 0.1em;
   color: var(--text-faint);
   transition: color 0.3s;
 }
 .flow__frame svg { width: 24px; height: 24px; transition: color 0.3s, transform 0.5s cubic-bezier(.2,.7,.2,1); }
 .flow__frame-title {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 60, "SOFT" 60;
+  font-family: var(--f-display);
   font-size: 1.1rem; line-height: 1.2;
 }
 .flow__frame-bar {              /* barra de progreso / temporizador */
@@ -1175,8 +1282,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition-delay: 0.12s, 0.12s, 0s;
 }
 .flow__big {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-family: var(--f-display);
   font-style: italic; font-weight: 300;
   font-size: clamp(6rem, 17vw, 14rem);
   line-height: 0.85;
@@ -1186,13 +1292,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .flow__hud-tag {
   display: block; margin-bottom: 14px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--accent);
 }
 .flow__title {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 120, "SOFT" 80;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(1.9rem, 3.6vw, 3rem);
   line-height: 1.1; letter-spacing: -0.02em;
@@ -1215,7 +1320,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .flow__rec {
   position: absolute; top: 18px; right: 52px;
   display: flex; align-items: center; gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.6rem; letter-spacing: 0.18em; color: var(--text-faint);
 }
 .flow__rec i {
@@ -1248,8 +1353,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .pay__items { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .pay__item { display: flex; align-items: baseline; gap: 16px; padding-right: 16px; }
 .pay__num {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 96, "SOFT" 80;
+  font-family: var(--f-display);
   font-weight: 300; font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1; color: var(--accent);
 }
@@ -1289,8 +1393,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-family: var(--f-display);
   font-weight: 600;
   font-size: clamp(6rem, 18vw, 15rem);
   color: var(--text);
@@ -1311,8 +1414,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   gap: 22px;
 }
 .colabora__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 90;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(2.2rem, 4.4vw, 3.6rem);
   line-height: 1.08;
@@ -1337,7 +1439,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .colabora__side { display: flex; flex-direction: column; gap: 36px; }
 .colabora__block { display: flex; flex-direction: column; gap: 14px; }
 .colabora__block-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.66rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1366,7 +1468,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .colabora__mini-steps { display: flex; flex-direction: column; gap: 12px; }
 .colabora__mini-step { display: flex; align-items: baseline; gap: 12px; }
 .colabora__mini-step span {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-weight: 400;
   font-size: 1rem;
   color: var(--accent);
@@ -1397,7 +1499,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .field-group { display: flex; flex-direction: column; gap: 9px; }
 .field-group label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.64rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1411,7 +1513,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: var(--bg-elev);
   border: 1px solid var(--line-strong);
   padding: 14px 16px;
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: var(--f-body);
   font-size: 0.95rem;
   color: var(--text);
   transition: border-color 0.3s ease, background 0.3s ease;
@@ -1430,7 +1532,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .field-group select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B88C8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 40px;
@@ -1445,8 +1547,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   gap: 12px;
   padding: 17px 32px;
   background: var(--accent);
-  color: #0a0a0d;
-  font-family: 'JetBrains Mono', monospace;
+  color: var(--on-accent);
+  font-family: var(--f-label);
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1454,7 +1556,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: background 0.3s ease, transform 0.2s ease;
   margin-top: 8px;
 }
-.colabora__submit:hover { background: var(--dorado-soft); }
+.colabora__submit:hover { background: var(--accent-hover); }
 .colabora__submit:disabled { opacity: 0.6; cursor: not-allowed; }
 .colabora__submit svg { transition: transform 0.3s ease; }
 .colabora__submit:hover svg { transform: translateX(4px); }
@@ -1510,8 +1612,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .testimonio__stars { color: var(--accent); font-size: 1rem; letter-spacing: 4px; }
 .testimonio__quote {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 96, "SOFT" 70;
+  font-family: var(--f-display);
   font-style: italic;
   font-weight: 300;
   font-size: clamp(1.3rem, 2.6vw, 1.9rem);
@@ -1528,18 +1629,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border: 1px solid var(--accent);
   color: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.78rem;
 }
 .testimonio__author > div { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
 .testimonio__name {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-weight: 500;
   font-size: 0.98rem;
   color: var(--text);
 }
 .testimonio__service {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.64rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1618,8 +1719,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .contacto__side { display: flex; flex-direction: column; gap: 24px; }
 .contacto__heading {
-  font-family: 'Fraunces', serif;
-  font-variation-settings: "opsz" 144, "SOFT" 90;
+  font-family: var(--f-display);
   font-weight: 300;
   font-size: clamp(2.4rem, 5vw, 4rem);
   line-height: 1.05;
@@ -1649,14 +1749,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .contacto__link:hover { padding-left: 8px; }
 .contacto__link-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.6rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-faint);
 }
 .contacto__link-value {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-weight: 400;
   font-size: 1rem;
   color: var(--text);
@@ -1668,7 +1768,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1706,17 +1806,17 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 .footer__brand { display: flex; align-items: center; }
-.footer__logo { height: 34px; width: auto; filter: brightness(0) invert(1); }
+.footer__logo { height: 56px; width: auto; filter: brightness(0) invert(1); }
 [data-theme="light"] .footer__logo { filter: none; }
 .footer__brand-fallback {
-  font-family: 'Fraunces', serif;
+  font-family: var(--f-display);
   font-size: 1.1rem;
   color: var(--text);
 }
 
 .footer__nav { display: flex; gap: 28px; flex-wrap: wrap; }
 .footer__nav a {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1727,7 +1827,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .footer__social { display: flex; gap: 20px; }
 .footer__social a {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.66rem;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -1743,7 +1843,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--f-label);
   font-size: 0.64rem;
   letter-spacing: 0.08em;
   color: var(--text-faint);
@@ -1802,10 +1902,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: rgba(5,5,7,0.97);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  touch-action: pan-y pinch-zoom;   /* el dedo desliza a los lados; el scroll vertical y el zoom siguen libres */
+  overscroll-behavior: contain;
 }
 #lightbox.open { opacity: 1; pointer-events: all; }
-#lbImgWrap { max-width: 90vw; max-height: 90svh; }
-#lbImg { max-width: 100%; max-height: 90svh; object-fit: contain; }
+#lbImgWrap { max-width: 90vw; max-height: 90svh; will-change: transform, opacity; }
+#lbImg {
+  max-width: 100%; max-height: 90svh; object-fit: contain;
+  -webkit-user-select: none; user-select: none; -webkit-user-drag: none;
+}
+/* el botón de WhatsApp se esconde mientras el visor está abierto (no tapa la foto ni estorba al deslizar) */
+body.lb-open .wa-float { opacity: 0; pointer-events: none; }
+#lbCount {
+  position: absolute; left: 0; right: 0; bottom: 22px; text-align: center;
+  font-family: var(--f-label); font-size: 0.68rem; letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.55); pointer-events: none; z-index: 201;
+}
 #lbClose {
   position: absolute; top: 24px; right: 28px;
   color: rgba(255,255,255,0.5); font-size: 1.4rem;

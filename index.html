@@ -24,9 +24,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..700&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261025">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80P47BSQ81"></script>
@@ -50,7 +50,7 @@
 ═══════════════════════════════════════════ -->
 <nav class="nav" id="nav">
   <a href="/" class="nav__brand" aria-label="Inicio">
-    <img src="image/logo.png" alt="Guillermo Álvarez" class="nav__logo"
+    <img src="image/logo-isotipo.png" alt="Guillermo Álvarez" class="nav__logo"
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
     <span class="nav__brand-fallback" style="display:none">
       <span class="nav__brand-mark"></span>
@@ -277,23 +277,40 @@
     </h2>
   </div>
 
-  <!-- Filtros -->
-  <div class="trabajo__filters reveal">
-    <button class="filter-chip active" data-filter="all" data-i18n="trabajo.filterAll">Todo</button>
-    <button class="filter-chip" data-filter="retrato" data-i18n="trabajo.filterRetrato">Retrato</button>
-    <button class="filter-chip" data-filter="pareja" data-i18n="trabajo.filterPareja">Pareja</button>
-    <button class="filter-chip" data-filter="corporativo" data-i18n="trabajo.filterCorporativo">Corporativo</button>
-    <button class="filter-chip" data-filter="lifestyle" data-i18n="trabajo.filterLifestyle">Lifestyle</button>
-    <button class="filter-chip" data-filter="urbana" data-i18n="trabajo.filterUrbana">Urbana</button>
+  <!-- Filtros + controles (js/galeria.js) -->
+  <div class="trabajo__bar reveal">
+    <div class="trabajo__filters" id="trabajoFilters" role="group" aria-label="Filtrar por categoría">
+      <button class="filter-chip active" data-filter="all" aria-pressed="true" data-i18n="trabajo.filterAll">Todo</button>
+      <button class="filter-chip" data-filter="retrato" aria-pressed="false" data-i18n="trabajo.filterRetrato">Retrato</button>
+      <button class="filter-chip" data-filter="pareja" aria-pressed="false" data-i18n="trabajo.filterPareja">Pareja</button>
+      <button class="filter-chip" data-filter="corporativo" aria-pressed="false" data-i18n="trabajo.filterCorporativo">Corporativo</button>
+      <button class="filter-chip" data-filter="lifestyle" aria-pressed="false" data-i18n="trabajo.filterLifestyle">Lifestyle</button>
+      <button class="filter-chip" data-filter="urbana" aria-pressed="false" data-i18n="trabajo.filterUrbana">Urbana</button>
+    </div>
+    <div class="trabajo__tools">
+      <small class="trabajo__count" id="trabajoCount" aria-live="polite"></small>
+      <button class="trabajo__tool" id="trabajoPause" type="button" aria-pressed="false" aria-label="Pausar el cambio automático de fotos">
+        <svg id="trabajoPauseIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <span id="trabajoPauseTxt">Pausar</span>
+      </button>
+      <button class="trabajo__tool" id="trabajoShuffle" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg>
+        <span data-i18n="trabajo.shuffle">Barajar</span>
+      </button>
+    </div>
   </div>
 
-  <!-- Filas dinámicas -->
-  <div class="trabajo__rows reveal">
-    <div class="trabajo__row" id="trabajoRow1">
-      <div class="trabajo__row-track" id="trabajoTrack1"></div>
-    </div>
-    <div class="trabajo__row" id="trabajoRow2">
-      <div class="trabajo__row-track" id="trabajoTrack2"></div>
+  <!-- "Todo": mesa de copias que cambia sola · Categoría: carrusel de dos filas -->
+  <div class="trabajo__stage reveal">
+    <div class="trabajo__mesa" id="trabajoMesa"></div>
+
+    <div class="trabajo__rows" id="trabajoRows">
+      <div class="trabajo__row" id="trabajoRow1">
+        <div class="trabajo__row-track" id="trabajoTrack1"></div>
+      </div>
+      <div class="trabajo__row" id="trabajoRow2">
+        <div class="trabajo__row-track" id="trabajoTrack2"></div>
+      </div>
     </div>
   </div>
 
@@ -991,13 +1008,16 @@
   <button id="lbClose" aria-label="Cerrar">✕</button>
   <button id="lbPrev" aria-label="Anterior">‹</button>
   <button id="lbNext" aria-label="Siguiente">›</button>
-  <div id="lbImgWrap"><img id="lbImg" src="" alt="Foto ampliada" /></div>
+  <div id="lbImgWrap"><img id="lbImg" src="" alt="Foto ampliada" draggable="false" /></div>
+  <span id="lbCount" aria-live="polite"></span>
 </div>
 
 <script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20261025"></script>
+<script src="js/galeria.js?v=20261025"></script>
 <script src="js/servicios.js"></script>
 <script src="js/proceso.js"></script>
 <script src="js/testimonios.js"></script>
 </body>
 </html>
+

@@ -58,7 +58,18 @@
     "filterCorporativo": "Corporativo",
     "filterLifestyle": "Lifestyle",
     "filterUrbana": "Urbana",
-    "verGaleria": "Ver galería completa en Pixieset"
+    "verGaleria": "Ver galería completa en Pixieset",
+    "filtersLabel": "Filtrar por categoría",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "pauseLabel": "Pausar el cambio automático de fotos",
+    "resumeLabel": "Reanudar el cambio automático de fotos",
+    "shuffle": "Barajar",
+    "countOf": "{n} de {total} fotos",
+    "countCat": "{n} fotos",
+    "viewPhoto": "Ver foto ampliada: {cat}",
+    "empty": "Todavía no hay fotos en esta categoría.",
+    "error": "No se pudo cargar el portafolio. Intenta de nuevo en un momento."
   },
   "servicios": {
     "heading1": "Cada sesión empieza",

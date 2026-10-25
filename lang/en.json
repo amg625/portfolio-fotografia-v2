@@ -58,7 +58,18 @@
     "filterCorporativo": "Corporate",
     "filterLifestyle": "Lifestyle",
     "filterUrbana": "Urban",
-    "verGaleria": "See the full gallery on Pixieset"
+    "verGaleria": "See the full gallery on Pixieset",
+    "filtersLabel": "Filter by category",
+    "pause": "Pause",
+    "resume": "Resume",
+    "pauseLabel": "Pause the automatic photo change",
+    "resumeLabel": "Resume the automatic photo change",
+    "shuffle": "Shuffle",
+    "countOf": "{n} of {total} photos",
+    "countCat": "{n} photos",
+    "viewPhoto": "View enlarged photo: {cat}",
+    "empty": "No photos in this category yet.",
+    "error": "The portfolio could not be loaded. Please try again in a moment."
   },
   "servicios": {
     "heading1": "Every session starts",
